@@ -30,6 +30,7 @@
         
         .container {
             padding-top: 35px;
+            position: relative;
         }
         
         .vote-token-title {
@@ -37,6 +38,14 @@
         }
         
         .vote-token-icon {
+            text-align: center;
+        }
+        
+        .vote-count {
+            text-align: center;
+        }
+        
+        .vote-button-container {
             text-align: center;
         }
         /*Custom Scroll Bar/////////////////////////
