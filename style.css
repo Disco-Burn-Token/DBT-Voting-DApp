@@ -29,7 +29,7 @@
         }
         
         .container {
-            padding-top: 35px;
+            padding-top: 45px;
             position: relative;
         }
         
@@ -38,6 +38,7 @@
         }
         
         .vote-token-icon {
+            margin-top: 10px;
             text-align: center;
         }
         
