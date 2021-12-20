@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>MoonSwap - Early Alpha</title>
+    <title>DiscoBurn DvT DApp</title>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" inte0xe907e365c5bc5008d14ef5df08b31d7bbba3b171grity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <link rel="icon" href="https://tokyomoon.digital/wp-content/uploads/2021/11/cropped-Text_Logo.png">
+    <link rel="icon" href="#">
 </head>
 
 <body class="tmbg" style="background-image: url(https://tokyomoon.digital/wp-content/uploads/2021/11/background.png)">
     <!--Side Bar-->
     <nav style="background-color: transparent;" class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">MoonSwap</a>
+        <a class="navbar-brand" href="#">DvT Voting DApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,128 +29,83 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="https://tokyomoon.digital/" id="lg">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" id="lg">Profile <span class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                    <a class="nav-link" href="https://forms.gle/sKjTvRSUHaHer9U6A" target="_blank" id="lg">Report-A-Bug <span class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                    <a class="nav-link" href="https://forms.gle/qB4K8LMinhHNPSgh8" target="_blank" id="lg">Feature Request<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="https://discoburntoken.com/" id="lg">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <button id="login_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with Metamask</button>
             <button id="login_button_wc" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with WalletConnect</button>
         </div>
     </nav>
-    <div class="ui sidebar inverted vertical menu">
-        <a class="item">
-            1
-        </a>
-        <a class="item">
-            2
-        </a>
-        <a class="item">
-            3
-        </a>
-    </div>
     <div class="pusher">
         <div>
-            <img class="satocoin" src="https://tokyomoon.digital/wp-content/uploads/2021/11/Text.png" alt="TokyoMoon Logo">
+            <img class="satocoin" src="#" alt="TokyoMoon Logo">
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="swapboxwindow" id="window">
+                    <div class="vote-token-title">
+                        <h4>Token 1</h4>
+                    </div>
+                    <div class="vote-token-icon">
+                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                    </div>
+                    <div>
+                        <div>
+                            Current Votes: V#
+                        </div>
+                        <div>
+                            V#
+                        </div>
+                    </div>
                     <h4>MoonSwap - Early Alpha Release</h4>
-                    <div class="slip">
-                        <label for="slippage">Slippage:</label>
-                        <input class="slipinput" type="text" id="slippage" name="slippage" placeholder="%" size="1" autocomplete="off">
-                    </div>
-                    <div id="form">
-                        <div class="swapbox" id="swap-from">
-
-                            <div style="padding: 5px; display: inline; margin: auto">
-                                <i class="hockey puck icon" style="color: #000000bd; float: right"></i>
-                                <span id="bnbdiv_from" style="color: rgba(0, 0, 0, 0.705); float: right"></span>
-                            </div>
-
-                            <div style="display: inline;float: left; margin:  auto">
-                                <div class="swapbox_select token_select" id="from_token_select">
-                                    <img class="token_image" id="from_token_img">
-                                    <span id="from_token_text">Select Token</span>
-                                </div>
-                                <div class="swapbox_select">
-                                    <input class="number form-control" placeholder="amount" id="from_amount" autocomplete="off">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="swapbox" id="swap-to">
-                            <div style="padding: 5px; display: inline">
-                                <i class="hockey puck icon" style="color: #000000bd; float: right"></i>
-                                <span id="bnbdiv_to" style="color: rgba(0, 0, 0, 0.705); float: right"></span>
-                            </div>
-
-                            <div style="display: inline;float: left">
-                                <div class="swapbox_select token_select" id="to_token_select">
-                                    <img class="token_image" id="to_token_img">
-                                    <span id="to_token_text">Select Token</span>
-                                </div>
-                                <div class="swapbox_select">
-                                    <input class="number form-control" placeholder="amount" id="to_amount" autocomplete="off">
-                                </div>
-                            </div>
-                        </div>
-                        <div>Estimated Gas: <span id="gas_estimate"></span></div>
-                        <div>
-                            <button class="ui teal button" id="swap_button" style="width: 100%">
-                            Swap
-                        </button>
-                        </div>
-                    </div>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                </div>
+                <div class="swapboxwindow " id="window ">
+                    <h4>Token 2</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                </div>
+                <div class="swapboxwindow " id="window ">
+                    <h4>Token 3</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                </div>
+                <div class="swapboxwindow " id="window ">
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                </div>
+                <div class="swapboxwindow " id="window ">
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
+                    <h4>MoonSwap - Early Alpha Release</h4>
                 </div>
             </div>
-        </div>
-        <div>
-        </div>
+            <div>
+            </div>
 
 
-        <div id="testing">
+            <div id="testing ">
 
-        </div>
-        <div class="modal" id="token_modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <div class="searchbardiv">
-                                <input type="text" id="tokenSearch" class="searchbar" placeholder="Custom Token.." autocomplete="off">
-                            </div>
-                            <div>
-                                <button id="search_button" class="searchbutton" type="submit">Search</button>
-                            </div>
-                        </div>
-                        <button id="modal_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="token_list"></div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.6.2/web3-provider.min.js"></script>
-    <script src="src/main.js"></script>
-    <script src="src/potcheck.js"></script>
-    <script src="src/w3Helper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js " integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin=" anonymous "></script>
+        <script src="semantic/dist/semantic.min.js "></script>
+        <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.6.2/web3-provider.min.js "></script>
+        <script src="src/main.js "></script>
+        <script src="src/potcheck.js "></script>
+        <script src="src/w3Helper.js "></script>
 </body>
 
 </html>

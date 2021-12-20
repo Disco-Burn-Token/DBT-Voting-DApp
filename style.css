@@ -28,53 +28,16 @@
             border: 1px solid #565656;
         }
         
-        .token_select {
-            padding: 5px 0;
-            color: #000000;
-            font-weight: bold;
-        }
-        
-        .token_select:hover {
-            background-color: #a406b963;
-            cursor: pointer;
-            border-radius: 20px;
-        }
-        
-        .token_list_img,
-        .token_image {
-            width: 40px;
-            padding-right: 10px;
-        }
-        
-        .modal-content {
-            background-color: #e7a005;
-            height: 600px;
-            overflow: auto;
-            border-radius: 20px;
-        }
-        
-        .token_row {
-            padding: 5px 10px;
-        }
-        
-        .token_row:hover {
-            background-color: #05756163;
-            cursor: pointer;
-            border-radius: 20px;
-        }
-        
-        .from_token_select {
-            color: #42e004;
-        }
-        
         .container {
             padding-top: 35px;
         }
         
-        .slip {
-            color: #e08104;
-            text-align: right;
-            font-weight: bold;
+        .vote-token-title {
+            text-align: center;
+        }
+        
+        .vote-token-icon {
+            text-align: center;
         }
         /*Custom Scroll Bar/////////////////////////
 /* width */
@@ -147,7 +110,7 @@
         
         .swapboxwindow {
             display: block;
-            min-width: 500px;
+            min-width: 200px;
         }
         
         .satoshibamoon {
