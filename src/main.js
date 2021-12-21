@@ -50,6 +50,101 @@ async function setHelperData() {
     global.user_profile.native_bal = await Moralis.Web3API.account.getNativeBalance(options);
 }
 
+//JS for VOTE button ONE functionality
+$(function() {
+    $( "#vote_token_1_button" ).click(function() {
+      $( "#vote_token_1_button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#vote_token_1_button" ).removeClass( "onclic" );
+        $( "#vote_token_1_button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#vote_token_1_button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
+//JS for VOTE button TWO functionality
+$(function() {
+    $( "#vote_token_2_button" ).click(function() {
+      $( "#vote_token_2_button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#vote_token_2_button" ).removeClass( "onclic" );
+        $( "#vote_token_2_button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#vote_token_2_button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
+    //JS for VOTE button THREE functionality
+$(function() {
+    $( "#vote_token_3_button" ).click(function() {
+      $( "#vote_token_3_button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#vote_token_3_button" ).removeClass( "onclic" );
+        $( "#vote_token_3_button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#vote_token_3_button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
+    //JS for VOTE button FOUR functionality
+$(function() {
+    $( "#vote_token_4_button" ).click(function() {
+      $( "#vote_token_4_button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#vote_token_4_button" ).removeClass( "onclic" );
+        $( "#vote_token_4_button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#vote_token_4_button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
+    //JS for VOTE button FIVE functionality
+$(function() {
+    $( "#vote_token_5_button" ).click(function() {
+      $( "#vote_token_5_button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#vote_token_5_button" ).removeClass( "onclic" );
+        $( "#vote_token_5_button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#vote_token_5_button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
 async function login() {
     try {
         currentUser = Moralis.User.current();
