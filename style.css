@@ -83,13 +83,14 @@
             text-align: center;
         }
         
+        /* Custom Vote Button */
         * {
             font-family: 'Roboto', sans-serif;
         }
     
         .vote-button-container-new {
-            margin-top: 50px;
-            margin-left: 31%;
+            margin-top: 30px;
+            margin-left: 31.2%;
 	        width: 130px;
 	        height: 40px;
 	        text-align: center;
@@ -100,15 +101,15 @@
 	        text-align: center;
 	        width: 130px;
 	        border-radius: 40px;
-	        background: rgba(255, 255, 255, 0);
-	        border: 2px solid #000000;
+	        background: rgba(255, 255, 255, 0.582);
+	        border: 4px solid #000000;
 	        color: #020202;
 	        letter-spacing: 1px;
 	        text-shadow: 0;
-	        font-size: 15px;
+	        font-size: 16px;
 	        font-weight: bold;
 	        cursor: pointer;
-	        transition: all 0.25s ease;
+	        transition: all .2s ease;
         }
         .vote-button-new:hover {
             color:rgb(0, 0, 0);
@@ -123,12 +124,14 @@
         .onclic {
             width: 40px;
             border-color:rgb(0, 0, 0);
-            border-width:3px;
+            background: rgba(0, 0, 0, 0);
+            border-width:5px;
             font-size:0;
             border-left-color:rgb(1, 212, 142);
             animation: rotating 2s 0.5s linear infinite;
         }
         .onclic:after {
+            transition: all .75s;
             content:"SUBMITTING";
         }
         .onclic:hover {
