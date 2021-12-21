@@ -95,6 +95,25 @@ function printTokenProps(fname, fsymbol, flogo, faddress, fdecimals) {
     }
 }
 
+//JS for VOTE button functionality
+$(function() {
+    $( "#button" ).click(function() {
+      $( "#button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#button" ).removeClass( "onclic" );
+        $( "#button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
 async function listAvailableTokens() {
     //result holds the data returned by the 1inche plugin. Same as Token_obj, only the token vars are named differently.
     //refer to line '100' this logo property is named 'logoURI', compared to being named 'logo' in the WEB3 return (line: 60).
