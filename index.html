@@ -14,17 +14,19 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link rel="icon" href="#">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
-<body class="tmbg" style="background-image: url(https://tokyomoon.digital/wp-content/uploads/2021/11/background.png)">
+<body class="tmbg" style="background-image: url(https://discoburntoken.com/wp-content/uploads/2021/12/Blockchain-Background.jpg)">
     <!--Side Bar-->
     <nav style="background-color: transparent;" class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">DvT Voting DApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -36,121 +38,108 @@
             <button id="login_button_wc" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with WalletConnect</button>
         </div>
     </nav>
-    <div class="pusher">
-        <div>
-            <img class="satocoin" src="#" alt="TokyoMoon Logo">
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="swapboxwindow" id="window">
-                    <div class="vote-token-title">
-                        <h4>Token 1</h4>
-                    </div>
-                    <div class="vote-token-icon">
-                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
-                    </div>
-                    <div class="vote-count">
-                        <div class="vote-token-cv">
-                            Current Votes:
-                        </div>
-                        <div id="vote-token-1-count" class="vote-token-count">
-                            37
-                        </div>
-                    </div>
-                    <div class="vote-button-container">
-                        <button id="vote_token_1_button" class="vote-button" type="submit">Vote</button>
-                    </div>
-
+    
+        <div class="vote-container">
+            <div class="swapboxwindow1" id="window">
+                <div class="vote-tokentitle">
+                    Token 1
                 </div>
-                <div class="swapboxwindow" id="window">
-                    <div class="vote-token-title">
-                        <h4>Token 2</h4>
-                    </div>
-                    <div class="vote-token-icon">
-                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
-                    </div>
-                    <div class="vote-count">
-                        <div class="vote-token-cv">
-                            Current Votes:
-                        </div>
-                        <div id="vote-token-2-count" class="vote-token-count">
-                            37
-                        </div>
-                    </div>
-                    <div class="vote-button-container">
-                        <button id="vote_token_2_button" class="vote-button" type="submit">Vote</button>
-                    </div>
-
+                <div class="vote-token-icon">
+                    <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
                 </div>
-                <div class="swapboxwindow" id="window">
-                    <div class="vote-token-title">
-                        <h4>Token 3</h4>
+                <div class="vote-count">
+                    <div class="vote-token-cv">
+                        Current Votes:
                     </div>
-                    <div class="vote-token-icon">
-                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                    <div id="vote-token-1-count" class="vote-count">
+                        37
                     </div>
-                    <div class="vote-count">
-                        <div class="vote-token-cv">
-                            Current Votes:
-                        </div>
-                        <div id="vote-token-3-count" class="vote-token-count">
-                            37
-                        </div>
-                    </div>
-                    <div class="vote-button-container">
-                        <button id="vote_token_3_button" class="vote-button" type="submit">Vote</button>
-                    </div>
-
                 </div>
-                <div class="swapboxwindow" id="window">
-                    <div class="vote-token-title">
-                        <h4>Token 4</h4>
-                    </div>
-                    <div class="vote-token-icon">
-                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
-                    </div>
-                    <div class="vote-count">
-                        <div class="vote-token-cv">
-                            Current Votes:
-                        </div>
-                        <div id="vote-token-4-count" class="vote-token-count">
-                            37
-                        </div>
-                    </div>
-                    <div class="vote-button-container">
-                        <button id="vote_token_4_button" class="vote-button" type="submit">Vote</button>
-                    </div>
-
+                <div class="vote-button-container-new">
+                    <button id="vote_token_1_button" class="vote-button-new" style="outline: none;"></button>
                 </div>
-                <div class="swapboxwindow" id="window">
-                    <div class="vote-token-title">
-                        <h4>Token 5</h4>
-                    </div>
-                    <div class="vote-token-icon">
-                        <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
-                    </div>
-                    <div class="vote-count">
-                        <div class="vote-token-cv">
-                            Current Votes:
-                        </div>
-                        <div id="vote-token-5-count" class="vote-token-count">
-                            37
-                        </div>
-                    </div>
-                    <div class="vote-button-container">
-                        <button id="vote_token_5_button" class="vote-button" type="submit">Vote</button>
-                    </div>
-
-                </div>
-            </div>
-            <div>
-            </div>
-
-
-            <div id="testing ">
 
             </div>
+            <div class="swapboxwindow2" id="window">
+                <div class="vote-tokentitle">
+                    Token 2
+                </div>
+                <div class="vote-token-icon">
+                    <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                </div>
+                <div class="vote-count">
+                    <div class="vote-token-cv">
+                        Current Votes:
+                    </div>
+                    <div id="vote-token-2-count" class="vote-count">
+                        37
+                    </div>
+                </div>
+                <div class="vote-button-container-new">
+                    <button id="vote_token_2_button" class="vote-button-new" style="outline: none;"></button>
+                </div>
+
+            </div>
+            <div class="swapboxwindow3" id="window">
+                <div class="vote-tokentitle">
+                    Token 3
+                </div>
+                <div class="vote-token-icon">
+                    <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                </div>
+                <div class="vote-count">
+                    <div class="vote-token-cv">
+                        Current Votes:
+                    </div>
+                    <div id="vote-token-3-count" class="vote-count">
+                        37
+                    </div>
+                </div>
+                <div class="vote-button-container-new">
+                    <button id="vote_token_3_button" class="vote-button-new" style="outline: none;"></button>
+                </div>
+
+            </div>
+            <div class="swapboxwindow4" id="window">
+                <div class="vote-tokentitle">
+                    Token 4
+                </div>
+                <div class="vote-token-icon">
+                    <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                </div>
+                <div class="vote-count">
+                    <div class="vote-token-cv">
+                        Current Votes:
+                    </div>
+                    <div id="vote-token-4-count" class="vote-count">
+                        37
+                    </div>
+                </div>
+                <div class="vote-button-container-new">
+                    <button id="vote_token_4_button" class="vote-button-new" style="outline: none;"></button>
+                </div>
+
+            </div>
+            <div class="swapboxwindow5" id="window">
+                <div class="vote-tokentitle">
+                    Token 5
+                </div>
+                <div class="vote-token-icon">
+                    <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                </div>
+                <div class="vote-count">
+                    <div class="vote-token-cv">
+                        Current Votes:
+                    </div>
+                    <div id="vote-token-5-count" class="vote-count">
+                        37
+                    </div>
+                </div>
+                <div class="vote-button-container-new">
+                    <button id="vote_token_5_button" class="vote-button-new" style="outline: none;"></button>
+                </div>
+            </div>
+            <span class="stretch"></span>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js " integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin=" anonymous "></script>
@@ -159,6 +148,8 @@
         <script src="src/main.js "></script>
         <script src="src/potcheck.js "></script>
         <script src="src/w3Helper.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 </body>
 
 </html>
