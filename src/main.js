@@ -9,10 +9,16 @@ let token_obj;
 //keeps track of if a user is logged in.
 let logged_in;
 
+//Refreshes wallet balances
+var intervalId = window.setInterval(function() {
+    getVoteBalances();
+}, 3000);
+
 //Called when site is loading.
 async function init() {
     await Moralis.start({ serverUrl, appId });
     await Moralis.enableWeb3();
+
 
     token_obj = await Moralis.Web3API.token;
     currentUser = await Moralis.User.current();
@@ -150,6 +156,8 @@ $(function() {
     }
 });
 
+
+
 async function login() {
     try {
         currentUser = Moralis.User.current();
@@ -161,6 +169,11 @@ async function login() {
             document.getElementById("vote_token_3_button").disabled = false;
             document.getElementById("vote_token_4_button").disabled = false;
             document.getElementById("vote_token_5_button").disabled = false;
+            document.getElementById("vote_token_1_button").removeAttribute("title");
+            document.getElementById("vote_token_2_button").removeAttribute("title");
+            document.getElementById("vote_token_3_button").removeAttribute("title");
+            document.getElementById("vote_token_4_button").removeAttribute("title");
+            document.getElementById("vote_token_5_button").removeAttribute("title");
             setHelperData();
         } else {
             logOut();
@@ -223,50 +236,95 @@ async function logOutWC() {
     logged_in = false;
 }
 
-function voteOne() {
-    Moralis.transfer({
+async function voteOne() {
+    const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "0"),
+        amount: Moralis.Units.Token("1", "9"),
         receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0x21aC5A168ecBC07D401875fb8747474d558125eb"
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
     });
+    tx.on("error", (error) => { console.log("An Error Occured") });
 }
 
 function voteTwo() {
     Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "0"),
+        amount: Moralis.Units.Token("1", "9"),
         receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0x21aC5A168ecBC07D401875fb8747474d558125eb"
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
     });
 };
 
 function voteThree() {
     Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "0"),
+        amount: Moralis.Units.Token("1", "9"),
         receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0x21aC5A168ecBC07D401875fb8747474d558125eb"
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
     });
 }
 
 function voteFour() {
     Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "0"),
+        amount: Moralis.Units.Token("1", "9"),
         receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0x21aC5A168ecBC07D401875fb8747474d558125eb"
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
     });
 }
 
 function voteFive() {
     Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "0"),
+        amount: Moralis.Units.Token("1", "9"),
         receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0x21aC5A168ecBC07D401875fb8747474d558125eb"
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
     });
 }
+
+async function getVoteBalances() {
+
+    let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    result1 = balances1.filter(function(e) {
+        return e.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+
+    let balances2 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x21aC5A168ecBC07D401875fb8747474d558125eb" });
+    result2 = balances2.filter(function(f) {
+        return f.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+
+    let balances3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    result3 = balances3.filter(function(g) {
+        return g.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+
+    let balances4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    result4 = balances4.filter(function(h) {
+        return h.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+
+    let balances5 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    result5 = balances5.filter(function(i) {
+        return i.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+    if (result1.length == 1) {
+        document.getElementById("vote-token-1-count").innerText = (result1[0].balance / 1000000000);
+    };
+    if (result2.length == 1) {
+        document.getElementById("vote-token-2-count").innerText = (result2[0].balance / 1000000000);
+    };
+    if (result3.length == 1) {
+        document.getElementById("vote-token-3-count").innerText = (result3[0].balance / 1000000000);
+    };
+    if (result4.length == 1) {
+        document.getElementById("vote-token-4-count").innerText = (result4[0].balance / 1000000000);
+    };
+    if (result5.length == 1) {
+        document.getElementById("vote-token-5-count").innerText = (result5[0].balance / 1000000000);
+    };
+};
 
 //function openModal(side) {
 //    currentSelectSide = side;
@@ -289,6 +347,7 @@ function voteFive() {
 //}
 
 init();
+getVoteBalances();
 
 //document.getElementById("modal_close").onclick = closeModal;
 document.getElementById("lg").onclick = logOut;
