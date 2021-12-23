@@ -22,7 +22,7 @@
 
 <body class="tmbg" style="background-image: url(https://discoburntoken.com/wp-content/uploads/2021/12/Blockchain-Background.jpg)">
     <!--Side Bar-->
-    <nav style="background-color: transparent;" class="navbar navbar-expand-lg navbar-dark">
+    <nav style="background-color: #bd28708e;" class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">DvT Voting DApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,11 +31,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="https://discoburntoken.com/" id="lg">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="https://discoburntoken.com/" id="lg">Home<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <button id="login_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with Metamask</button>
-            <button id="login_button_wc" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with WalletConnect</button>
+            <button id="login_button" class="bubbly-button1"  type="submit">
+                    <span>Sign-In with Meta Mask</span>
+            </button>
+            <button id="login_button_wc" class="bubbly-button2" type="submit">Sign in with WalletConnect</button>
         </div>
     </nav>
     
@@ -56,7 +58,7 @@
                     </div>
                 </div>
                 <div class="vote-button-container-new">
-                    <button id="vote_token_1_button" class="vote-button-new" style="outline: none;"></button>
+                    <button id="vote_token_1_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
                 </div>
 
             </div>
@@ -76,7 +78,7 @@
                     </div>
                 </div>
                 <div class="vote-button-container-new">
-                    <button id="vote_token_2_button" class="vote-button-new" style="outline: none;"></button>
+                    <button id="vote_token_2_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
                 </div>
 
             </div>
@@ -96,7 +98,7 @@
                     </div>
                 </div>
                 <div class="vote-button-container-new">
-                    <button id="vote_token_3_button" class="vote-button-new" style="outline: none;"></button>
+                    <button id="vote_token_3_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
                 </div>
 
             </div>
@@ -116,7 +118,7 @@
                     </div>
                 </div>
                 <div class="vote-button-container-new">
-                    <button id="vote_token_4_button" class="vote-button-new" style="outline: none;"></button>
+                    <button id="vote_token_4_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
                 </div>
 
             </div>
@@ -136,7 +138,7 @@
                     </div>
                 </div>
                 <div class="vote-button-container-new">
-                    <button id="vote_token_5_button" class="vote-button-new" style="outline: none;"></button>
+                    <button id="vote_token_5_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
                 </div>
             </div>
             <span class="stretch"></span>
@@ -149,6 +151,8 @@
         <script src="src/w3Helper.js "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="src/Button1.js "></script>
+        <script src="src/Button2.js "></script>
 </body>
 
 </html>
