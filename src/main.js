@@ -244,13 +244,20 @@ async function voteOne() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
+        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    tx.on("error", (error) => { alert("Vote Failed") });
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
     tx.on("receipt", (receipt) => {
-        alert("Vote Successful");
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!"
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
@@ -294,7 +301,7 @@ function voteFive() {
 
 async function getVoteBalances() {
 
-    let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x21aC5A168ecBC07D401875fb8747474d558125eb" });
     result1 = balances1.filter(function(e) {
         return e.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
@@ -335,14 +342,8 @@ async function getVoteBalances() {
     };
 };
 
-//function openModal(side) {
-//    currentSelectSide = side;
-//    if (side == 'from') {
-//        from = true;
-//    } else {
-//        from = false;
-//    }
-//    document.getElementById("token_modal").style.display = "block";
+//function openModal() {
+//document.getElementById("modal"). = "block";
 //}
 
 //function closeModal() {
