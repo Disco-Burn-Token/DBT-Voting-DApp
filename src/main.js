@@ -1,7 +1,7 @@
 //import * as helper from './w3Helper.js';
 
-const serverUrl = "https://klpxwezyuiua.usemoralis.com:2053/server"; //Server url from moralis.io
-const appId = "SJlvpL4zKheiaYlFnUpSL5ozOZsq7D7Q45nbwckX"; // Application id from moralis.io
+const serverUrl = "https://n94w6dpcju5j.usemoralis.com:2053/server"; //Server url from moralis.io
+const appId = "9fEOftbkmcmrFbKqFwEHfOCfsWBxz3z3efr1vcPM"; // Application id from moralis.io
 
 //This is being used to hold the Web3API namespace
 let token_obj;
@@ -10,9 +10,9 @@ let token_obj;
 let logged_in;
 
 //Refreshes wallet balances
-var intervalId = window.setInterval(function() {
-    getVoteBalances();
-}, 3000);
+//var intervalId = window.setInterval(function() {
+//    getVoteBalances();
+//}, 10000);
 
 //Called when site is loading.
 async function init() {
@@ -23,7 +23,6 @@ async function init() {
     token_obj = await Moralis.Web3API.token;
     currentUser = await Moralis.User.current();
     global.user_profile.entity = currentUser;
-    //document.getElementById("slippage").value = slippage;
     //If User is logged in
     if (currentUser) {
         logged_in = true;
@@ -32,6 +31,11 @@ async function init() {
         document.getElementById("vote_token_3_button").disabled = false;
         document.getElementById("vote_token_4_button").disabled = false;
         document.getElementById("vote_token_5_button").disabled = false;
+        document.getElementById("vote_token_1_button").removeAttribute("title");
+        document.getElementById("vote_token_2_button").removeAttribute("title");
+        document.getElementById("vote_token_3_button").removeAttribute("title");
+        document.getElementById("vote_token_4_button").removeAttribute("title");
+        document.getElementById("vote_token_5_button").removeAttribute("title");
         document.getElementById("login_button").innerText = "Logout";
         setHelperData();
         console.log(global.user_profile.born);
@@ -244,7 +248,12 @@ async function voteOne() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    tx.on("error", (error) => { console.log("An Error Occured") });
+    tx.on("error", (error) => { alert("Vote Failed") });
+    tx.on("receipt", (receipt) => {
+        alert("Vote Successful");
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+    });
 }
 
 function voteTwo() {
