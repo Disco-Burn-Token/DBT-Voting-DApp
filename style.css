@@ -55,12 +55,12 @@
             font-size: 50px;
             inline-size: min-content;
             align-content: center;
-            color: rgb(212, 1, 1);
+            color: red;
             font-family: Oswald;
             font-weight: 600;
             padding-top: 50px;
             padding-bottom: 50px;
-            display: block;
+            display: none;
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
