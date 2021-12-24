@@ -48,6 +48,28 @@
             zoom: 1
         }
         
+        .message_box {
+            margin-top: 100px;
+            background-color: rgba(0, 0, 0, 0.432);
+            border-radius: 30px;
+            font-size: 50px;
+            inline-size: min-content;
+            align-content: center;
+            color: red;
+            font-family: Oswald;
+            font-weight: 600;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: none;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: fit-content;
+            line-height: 50px;
+        }
+        
         .stretch {
             width: 100%;
             display: inline-block;
