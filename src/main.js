@@ -26,6 +26,8 @@ async function init() {
     token_obj = await Moralis.Web3API.token;
     currentUser = await Moralis.User.current();
     global.user_profile.entity = currentUser;
+    getVoteBalances();
+    disableButtons();
     //If User is logged in
     if (currentUser) {
         logged_in = true;
@@ -40,7 +42,7 @@ async function init() {
     else {
         logged_in = false;
         disableButtons();
-        document.getElementById("login_button").innerText = "Sign in with Metamask";
+        document.getElementById("login_button").innerText = "Sign in with MetaMask";
     }
 }
 
@@ -367,8 +369,7 @@ async function getVoteBalances() {
 //}
 
 init();
-getVoteBalances();
-disableButtons();
+
 
 //document.getElementById("modal_close").onclick = closeModal;
 document.getElementById("lg").onclick = logOut;
