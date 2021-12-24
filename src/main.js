@@ -12,10 +12,10 @@ let logged_in;
 //Tracks if user has a vote token
 var has_token = false;
 
-//Auto - Refreshes wallet balances
-//var intervalId = window.setInterval(function() {
-//    getVoteBalances();
-//}, 10000);
+//Auto - Refreshes wallet balances every 45 seconds
+var intervalId = window.setInterval(function() {
+    getVoteBalances();
+}, 45000);
 
 //Called when site is loading.
 async function init() {
@@ -255,7 +255,7 @@ async function voteOne() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        receiver: "0xecbA00776aA154B3c05486badB0AE2d08B865d04",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -279,7 +279,7 @@ async function voteTwo() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        receiver: "0x26F4C1C79dA2db3E298053B1416089783A796c70",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -303,7 +303,7 @@ async function voteThree() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        receiver: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -327,7 +327,7 @@ async function voteFour() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        receiver: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -351,7 +351,7 @@ async function voteFive() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        receiver: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -373,27 +373,27 @@ async function voteFive() {
 
 async function getVoteBalances() {
 
-    let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x21aC5A168ecBC07D401875fb8747474d558125eb" });
+    let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xecbA00776aA154B3c05486badB0AE2d08B865d04" });
     result1 = balances1.filter(function(e) {
         return e.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
 
-    let balances2 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x21aC5A168ecBC07D401875fb8747474d558125eb" });
+    let balances2 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x26F4C1C79dA2db3E298053B1416089783A796c70" });
     result2 = balances2.filter(function(f) {
         return f.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
 
-    let balances3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    let balances3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8" });
     result3 = balances3.filter(function(g) {
         return g.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
 
-    let balances4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    let balances4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3" });
     result4 = balances4.filter(function(h) {
         return h.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
 
-    let balances5 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb" });
+    let balances5 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b" });
     result5 = balances5.filter(function(i) {
         return i.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
