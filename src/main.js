@@ -275,39 +275,99 @@ async function voteOne() {
     });
 }
 
-function voteTwo() {
-    Moralis.transfer({
+async function voteTwo() {
+    const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
+        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
     });
-};
-
-function voteThree() {
-    Moralis.transfer({
-        type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
-}
-
-function voteFour() {
-    Moralis.transfer({
-        type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
+    tx.on("receipt", (receipt) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        disableButtons();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
     });
 }
 
-function voteFive() {
-    Moralis.transfer({
+async function voteThree() {
+    const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0x21aC5A168ecBC07D401875fb8747474d558125eb",
-        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607"
+        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
+    });
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        disableButtons();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+    });
+}
+
+async function voteFour() {
+    const tx = await Moralis.transfer({
+        type: "erc20",
+        amount: Moralis.Units.Token("1", "9"),
+        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
+    });
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        disableButtons();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+    });
+}
+
+async function voteFive() {
+    const tx = await Moralis.transfer({
+        type: "erc20",
+        amount: Moralis.Units.Token("1", "9"),
+        receiver: "0x298F5822b45caD820a7C4b96EbdD1C72109F54Eb",
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
+    });
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        disableButtons();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
     });
 }
 
