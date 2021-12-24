@@ -10,7 +10,7 @@ let token_obj;
 let logged_in;
 
 //Tracks if user has a vote token
-let has_token;
+var has_token = false;
 
 //Auto - Refreshes wallet balances
 //var intervalId = window.setInterval(function() {
@@ -31,6 +31,7 @@ async function init() {
         logged_in = true;
         enableButtons();
         document.getElementById("login_button").innerText = "Logout";
+        tokenCheck();
         setHelperData();
         console.log(global.user_profile.born);
     }
@@ -180,11 +181,7 @@ async function login() {
             document.getElementById("login_button").innerText = "Authenticating...";
             currentUser = await Moralis.authenticate();
             enableButtons();
-            document.getElementById("vote_token_1_button").removeAttribute("title");
-            document.getElementById("vote_token_2_button").removeAttribute("title");
-            document.getElementById("vote_token_3_button").removeAttribute("title");
-            document.getElementById("vote_token_4_button").removeAttribute("title");
-            document.getElementById("vote_token_5_button").removeAttribute("title");
+            tokenCheck();
             setHelperData();
         } else {
             logOut();
@@ -213,6 +210,7 @@ async function loginWC() {
             document.getElementById("login_button_wc").innerText = "Authenticating...";
             currentUser = await Moralis.authenticate({ provider: "walletconnect", chainId: 56 });
             enableButtons();
+            tokenCheck();
             setHelperData();
         } else {
             logOut();
@@ -240,8 +238,14 @@ async function tokenCheck() {
     vote_token = currentBalances.filter(function(v) {
         return v.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
-    if (vote_token[0].balance != 0) {
+    if (vote_token.length != 0) {
         has_token = true;
+        document.getElementById("message").style.display = "none";
+    } else if (vote_token.length == 0) {
+        has_token = false;
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Logged in but no DvT in Wallet";
+        disableButtons();
     }
 }
 
