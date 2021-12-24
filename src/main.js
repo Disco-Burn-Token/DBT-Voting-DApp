@@ -368,6 +368,7 @@ async function getVoteBalances() {
 
 init();
 getVoteBalances();
+disableButtons();
 
 //document.getElementById("modal_close").onclick = closeModal;
 document.getElementById("lg").onclick = logOut;
