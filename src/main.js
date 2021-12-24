@@ -201,6 +201,7 @@ async function logOut() {
     currentUser = await Moralis.User.logOut();
     document.getElementById("login_button").innerText = "Sign in with Metamask";
     disableButtons();
+    document.getElementById("message").style.display = "none";
 
     logged_in = false;
 }
@@ -231,6 +232,7 @@ async function logOutWC() {
     currentUser = await Moralis.User.logOut();
     document.getElementById("login_button_wc").innerText = "Sign in with WalletConnect";
     disableButtons();
+    document.getElementById("message").style.display = "none";
 
     logged_in = false;
 }
