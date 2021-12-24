@@ -269,7 +269,6 @@ async function voteOne() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
         disableButtons();
-        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
@@ -293,7 +292,6 @@ async function voteTwo() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
         disableButtons();
-        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
@@ -317,7 +315,6 @@ async function voteThree() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
         disableButtons();
-        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
@@ -341,7 +338,6 @@ async function voteFour() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
         disableButtons();
-        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
@@ -365,7 +361,6 @@ async function voteFive() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
         disableButtons();
-        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
     });
