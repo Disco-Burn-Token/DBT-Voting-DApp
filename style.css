@@ -52,7 +52,8 @@
             margin-top: 100px;
             background-color: rgba(0, 0, 0, 0.432);
             border-radius: 30px;
-            font-size: 40px;
+            font-size: 50px;
+            inline-size: min-content;
             align-content: center;
             color: rgb(212, 1, 1);
             font-family: Oswald;
@@ -65,7 +66,8 @@
             margin-right: auto;
             padding-left: 15px;
             padding-right: 15px;
-            white-space: nowrap;
+            height: fit-content;
+            line-height: 50px;
         }
         
         .stretch {
