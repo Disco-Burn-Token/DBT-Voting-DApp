@@ -12,6 +12,8 @@ let logged_in;
 //Tracks if user has a vote token
 var has_token = false;
 
+disableButtons();
+
 //Auto - Refreshes wallet balances every 45 seconds
 var intervalId = window.setInterval(function() {
     getVoteBalances();
@@ -21,13 +23,12 @@ var intervalId = window.setInterval(function() {
 async function init() {
     await Moralis.start({ serverUrl, appId });
     await Moralis.enableWeb3();
+    getVoteBalances();
 
 
     token_obj = await Moralis.Web3API.token;
     currentUser = await Moralis.User.current();
     global.user_profile.entity = currentUser;
-    getVoteBalances();
-    disableButtons();
     //If User is logged in
     if (currentUser) {
         logged_in = true;
