@@ -95,15 +95,13 @@
         }
         
         .vote-token-sublink {
-            display: inline;
-            white-space: nowrap;
             margin-left: 30%;
             margin-right: 30%;
+            padding-bottom: 40px;
         }
         
         .vote-token-sublink-icon1 {
             white-space: nowrap;
-            float: left;
             display: inline;
             position: inherit;
         }
