@@ -7,7 +7,7 @@
             box-shadow: rgba(0, 0, 0, 0.815) 0px 2px 10px, rgba(0, 0, 0, 0.404) 0px 4px 13px -6px, rgba(0, 0, 0, 0.349) 0px -8px 0px inset;
             margin-right: auto;
             margin-left: auto;
-            height: auto;
+            height: fit-content;
         }
         
         #h4 {
@@ -41,8 +41,10 @@
         .swapboxwindow3,
         .swapboxwindow4,
         .swapboxwindow5 {
+            padding:0%;
+            Margin: 0%;
             width: 450px;
-            height: 300px;
+            height: fit-content;
             display: inline-block;
             *display: inline;
             zoom: 1
@@ -85,7 +87,7 @@
         }
         
         .vote-token-icon {
-            margin-top: 40px;
+            margin-top: 0px;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -147,6 +149,7 @@
             outline: none;
             margin: 0 auto;
             margin-top: 25px;
+            margin-bottom: 20px;;
             position: center;
             height: 40px;
             text-align: center;
@@ -226,11 +229,45 @@
         /*Nav-Bar CSS*/
         
         .navbar-expand-lg {
-            min-height: 60px;
-            max-height: 300px;
+            min-height: fit-content;
+            max-height: fit-content;
             box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
         }
         
+        .navbar-navbar-expand-lg-navbar-dark {
+            text-align: center;
+            padding: 0%;
+        }
+
+        .nav-new{
+            text-align: center;
+            width: 100%;
+            height: fit-content;
+        }
+
+        .navbar-brand {
+            float:left;
+            max-width: 100%;
+            height: fit-content;
+            margin-left: 20px;
+        }
+
+        .navbar-brand-responsive_new {
+            text-align: center;
+            max-width: fit-content;
+            height: 100%;
+            height: auto;
+        }
+        
+        .Sign-in-Div {
+            text-align: right;
+
+        }
+
+        .collapse:not(.show) {
+            display: block;
+        }
+
         /*Nav-Bar BUTTON 1 MM Sign-in */
         
         body {
