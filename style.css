@@ -37,11 +37,7 @@
             padding-bottom: 50px;
         }
         
-        .swapboxwindow1,
-        .swapboxwindow2,
-        .swapboxwindow3,
-        .swapboxwindow4,
-        .swapboxwindow5 {
+        .swapboxwindow {
             padding: 0%;
             Margin: 0%;
             width: 450px;
@@ -95,8 +91,8 @@
         }
         
         .vote-token-sublink {
-            margin-left: 30%;
-            margin-right: 30%;
+            margin-left: 25%;
+            margin-right: 25%;
             padding-bottom: 40px;
         }
         
@@ -620,6 +616,10 @@
         
         .navbar-dark .navbar-nav .nav-link {
             color: #ffffff
+        }
+        
+        .navbar {
+            justify-content: center;
         }
         
         @media only screen and (max-width: 770px) {
