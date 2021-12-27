@@ -60,11 +60,13 @@ function enableButtons() {
     document.getElementById("vote_token_3_button").disabled = false;
     document.getElementById("vote_token_4_button").disabled = false;
     document.getElementById("vote_token_5_button").disabled = false;
+    document.getElementById("vote_token_6_button").disabled = false;
     document.getElementById("vote_token_1_button").removeAttribute("title");
     document.getElementById("vote_token_2_button").removeAttribute("title");
     document.getElementById("vote_token_3_button").removeAttribute("title");
     document.getElementById("vote_token_4_button").removeAttribute("title");
     document.getElementById("vote_token_5_button").removeAttribute("title");
+    document.getElementById("vote_token_6_button").removeAttribute("title");
 }
 
 function disableButtons() {
@@ -73,6 +75,7 @@ function disableButtons() {
     document.getElementById("vote_token_3_button").disabled = true;
     document.getElementById("vote_token_4_button").disabled = true;
     document.getElementById("vote_token_5_button").disabled = true;
+    document.getElementById("vote_token_6_button").disabled = true;
 }
 
 //JS for VOTE button ONE functionality
@@ -369,6 +372,29 @@ async function voteFive() {
     });
 }
 
+async function voteSix() {
+    const tx = await Moralis.transfer({
+        type: "erc20",
+        amount: Moralis.Units.Token("1", "9"),
+        receiver: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b",
+        contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
+        awaitReceipt: false
+    });
+    tx.on("error", (error) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        disableButtons();
+        setTimeout(() => { getVoteBalances(); }, 10000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+    });
+}
+
 async function getVoteBalances() {
 
     let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xecbA00776aA154B3c05486badB0AE2d08B865d04" });
@@ -395,6 +421,12 @@ async function getVoteBalances() {
     result5 = balances5.filter(function(i) {
         return i.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
+
+    let balances6 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b" });
+    result6 = balances6.filter(function(j) {
+        return j.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
+    });
+
     if (result1.length == 1) {
         document.getElementById("vote-token-1-count").innerText = (result1[0].balance / 1000000000);
     };
@@ -409,6 +441,9 @@ async function getVoteBalances() {
     };
     if (result5.length == 1) {
         document.getElementById("vote-token-5-count").innerText = (result5[0].balance / 1000000000);
+    };
+    if (result6.length == 1) {
+        document.getElementById("vote-token-6-count").innerText = (result5[0].balance / 1000000000);
     };
 };
 
@@ -438,3 +473,4 @@ document.getElementById("vote_token_2_button").onclick = voteTwo;
 document.getElementById("vote_token_3_button").onclick = voteThree;
 document.getElementById("vote_token_4_button").onclick = voteFour;
 document.getElementById("vote_token_5_button").onclick = voteFive;
+document.getElementById("vote_token_6_button").onclick = voteSix;
