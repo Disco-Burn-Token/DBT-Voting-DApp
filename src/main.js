@@ -163,6 +163,7 @@ async function voteOne() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
@@ -186,6 +187,7 @@ async function voteTwo() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
@@ -209,6 +211,7 @@ async function voteThree() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
@@ -232,6 +235,7 @@ async function voteFour() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
@@ -255,6 +259,7 @@ async function voteFive() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
@@ -278,6 +283,7 @@ async function voteSix() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
+    document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
