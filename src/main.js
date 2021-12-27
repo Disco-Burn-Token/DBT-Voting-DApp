@@ -118,7 +118,7 @@ async function loginWC() {
             tokenCheck();
             setHelperData();
         } else {
-            logOut();
+            logOutWC();
         }
         document.getElementById("login_button_wc").innerText = "Logout";
         logged_in = true;
