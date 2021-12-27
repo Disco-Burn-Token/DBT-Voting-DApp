@@ -1,6 +1,6 @@
         #window {
             margin-top: 50px;
-            background-image: linear-gradient(rgba(46, 2, 128, 0.781) 10%, rgb(231, 71, 159) 75%,#FFA236);
+            background-image: linear-gradient(rgba(46, 2, 128, 0.781) 10%, rgb(231, 71, 159) 75%, #FFA236);
             color: #ffffff;
             padding: 50px;
             border-radius: 60px;
@@ -82,6 +82,7 @@
             font-size: 50px;
             font-weight: bolder;
             text-align: center;
+            display: none;
         }
         
         .vote-token-icon {
@@ -93,27 +94,27 @@
         .vote-token-sublink {
             display: inline;
             white-space: nowrap;
-            margin-left:30%;
-            margin-right:30%;
+            margin-left: 30%;
+            margin-right: 30%;
         }
-
+        
         .vote-token-sublink-icon1 {
             white-space: nowrap;
             float: left;
             display: inline;
             position: inherit;
         }
-
+        
         .vote-token-sublink-icon2 {
             white-space: nowrap;
             float: right;
             display: inline;
             position: inherit;
         }
-
+        
         .vote-token-cv {
-            margin-top:0 auto;
-            margin-bottom:20px;
+            margin-top: 0 auto;
+            margin-bottom: 20px;
             white-space: nowrap;
             font-family: Oswald;
             font-size: 35px;
@@ -230,7 +231,6 @@
             max-height: 300px;
             box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
         }
-        
         /*Nav-Bar BUTTON 1 MM Sign-in */
         
         body {
@@ -584,4 +584,10 @@
         
         .navbar-dark .navbar-nav .nav-link {
             color: #ffffff
+        }
+        
+        @media only screen and (max-width: 767px) {
+            .bubbly-button1 {
+                display: none;
+            }
         }
