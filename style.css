@@ -41,7 +41,7 @@
         .swapboxwindow3,
         .swapboxwindow4,
         .swapboxwindow5 {
-            padding:0%;
+            padding: 0%;
             Margin: 0%;
             width: 450px;
             height: fit-content;
@@ -150,7 +150,8 @@
             outline: none;
             margin: 0 auto;
             margin-top: 25px;
-            margin-bottom: 20px;;
+            margin-bottom: 20px;
+            ;
             position: center;
             height: 40px;
             text-align: center;
@@ -239,20 +240,20 @@
             text-align: center;
             padding: 0%;
         }
-
-        .nav-new{
+        
+        .nav-new {
             text-align: center;
             width: 100%;
             height: fit-content;
         }
-
+        
         .navbar-brand {
-            float:left;
+            float: left;
             max-width: 100%;
             height: fit-content;
             margin-left: 20px;
         }
-
+        
         .navbar-brand-responsive_new {
             text-align: center;
             max-width: fit-content;
@@ -262,14 +263,11 @@
         
         .Sign-in-Div {
             text-align: right;
-
         }
-
+        
         .collapse:not(.show) {
             display: block;
         }
-
-
         /*Nav-Bar BUTTON 1 MM Sign-in */
         
         body {
@@ -625,7 +623,7 @@
             color: #ffffff
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 770px) {
             .bubbly-button1 {
                 display: none;
             }
