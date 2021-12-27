@@ -376,7 +376,7 @@ async function voteSix() {
     const tx = await Moralis.transfer({
         type: "erc20",
         amount: Moralis.Units.Token("1", "9"),
-        receiver: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b",
+        receiver: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
@@ -422,7 +422,7 @@ async function getVoteBalances() {
         return i.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
 
-    let balances6 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b" });
+    let balances6 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1" });
     result6 = balances6.filter(function(j) {
         return j.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
