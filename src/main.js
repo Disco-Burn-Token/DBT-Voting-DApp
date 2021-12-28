@@ -347,7 +347,7 @@ async function getVoteBalances() {
         document.getElementById("vote-token-5-count").innerText = (result5[0].balance / 1000000000);
     };
     if (result6.length == 1) {
-        document.getElementById("vote-token-6-count").innerText = (result5[0].balance / 1000000000);
+        document.getElementById("vote-token-6-count").innerText = (result6[0].balance / 1000000000);
     };
 };
 
