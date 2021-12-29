@@ -12,6 +12,13 @@ let logged_in;
 //Tracks if user has a vote token
 var has_token = false;
 
+var voteamount1 = 0;
+var voteamount2 = 0;
+var voteamount3 = 0;
+var voteamount4 = 0;
+var voteamount5 = 0;
+var voteamount6 = 0;
+
 disableButtons();
 
 //Auto - Refreshes wallet balances every 45 seconds
@@ -156,146 +163,182 @@ async function tokenCheck() {
 }
 
 async function voteOne() {
+    if (voteamount1 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount1, "9"),
         receiver: "0xecbA00776aA154B3c05486badB0AE2d08B865d04",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
 async function voteTwo() {
+    if (voteamount2 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount2, "9"),
         receiver: "0x26F4C1C79dA2db3E298053B1416089783A796c70",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
 async function voteThree() {
+    if (voteamount3 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount3, "9"),
         receiver: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
 async function voteFour() {
+    if (voteamount4 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount4, "9"),
         receiver: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
 async function voteFive() {
+    if (voteamount5 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount5, "9"),
         receiver: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
 async function voteSix() {
+    if (voteamount6 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token("1", "9"),
+        amount: Moralis.Units.Token(voteamount6, "9"),
         receiver: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1",
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote. . .";
     tx.on("error", (error) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Vote Failed";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
     });
     tx.on("receipt", (receipt) => {
+        scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
-        disableButtons();
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
 
@@ -351,6 +394,56 @@ async function getVoteBalances() {
     };
 };
 
+function setVoteCount1() {
+    var votecount = document.getElementById("vote-count-input1");
+    voteCountValue = votecount.value;
+    voteamount1 = parseInt(voteCountValue);
+    console.log(voteamount1);
+}
+
+function setVoteCount2() {
+    var votecount = document.getElementById("vote-count-input2");
+    voteCountValue = votecount.value;
+    voteamount2 = parseInt(voteCountValue);
+    console.log(voteamount2);
+}
+
+function setVoteCount3() {
+    var votecount = document.getElementById("vote-count-input3");
+    voteCountValue = votecount.value;
+    voteamount3 = parseInt(voteCountValue);
+    console.log(voteamount3);
+}
+
+function setVoteCount4() {
+    var votecount = document.getElementById("vote-count-input4");
+    voteCountValue = votecount.value;
+    voteamount4 = parseInt(voteCountValue);
+    console.log(voteamount4);
+}
+
+function setVoteCount5() {
+    var votecount = document.getElementById("vote-count-input5");
+    voteCountValue = votecount.value;
+    voteamount5 = parseInt(voteCountValue);
+    console.log(voteamount5);
+}
+
+function setVoteCount6() {
+    var votecount = document.getElementById("vote-count-input6");
+    voteCountValue = votecount.value;
+    voteamount6 = parseInt(voteCountValue);
+    console.log(voteamount6);
+}
+
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
 //function openModal() {
 //document.getElementById("modal"). = "block";
 //}
@@ -378,3 +471,9 @@ document.getElementById("vote_token_3_button").onclick = voteThree;
 document.getElementById("vote_token_4_button").onclick = voteFour;
 document.getElementById("vote_token_5_button").onclick = voteFive;
 document.getElementById("vote_token_6_button").onclick = voteSix;
+document.getElementById("vote-count-input1").oninput = setVoteCount1;
+document.getElementById("vote-count-input2").oninput = setVoteCount2;
+document.getElementById("vote-count-input3").oninput = setVoteCount3;
+document.getElementById("vote-count-input4").oninput = setVoteCount4;
+document.getElementById("vote-count-input5").oninput = setVoteCount5;
+document.getElementById("vote-count-input6").oninput = setVoteCount6;
