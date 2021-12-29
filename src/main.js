@@ -19,6 +19,8 @@ var voteamount4 = 0;
 var voteamount5 = 0;
 var voteamount6 = 0;
 
+var vote_token_balance = 0;
+
 disableButtons();
 
 //Auto - Refreshes wallet balances every 45 seconds
@@ -151,6 +153,7 @@ async function tokenCheck() {
     vote_token = currentBalances.filter(function(v) {
         return v.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
+    vote_token_balance = (vote_token[0].balance / 1000000000 );
     if (vote_token.length != 0) {
         has_token = true;
         document.getElementById("message").style.display = "none";
@@ -165,6 +168,12 @@ async function tokenCheck() {
 async function voteOne() {
     if (voteamount1 == 0) {
         alert("Please Enter Number of Votes");
+        return;
+    } else if (voteamount1 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         return;
     }
     const tx = await Moralis.transfer({
@@ -197,6 +206,12 @@ async function voteTwo() {
     if (voteamount2 == 0) {
         alert("Please Enter Number of Votes");
         return;
+    } else if (voteamount2 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        return;
     }
     const tx = await Moralis.transfer({
         type: "erc20",
@@ -227,6 +242,12 @@ async function voteTwo() {
 async function voteThree() {
     if (voteamount3 == 0) {
         alert("Please Enter Number of Votes");
+        return;
+    } else if (voteamount3 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         return;
     }
     const tx = await Moralis.transfer({
@@ -259,6 +280,12 @@ async function voteFour() {
     if (voteamount4 == 0) {
         alert("Please Enter Number of Votes");
         return;
+    } else if (voteamount4 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        return;
     }
     const tx = await Moralis.transfer({
         type: "erc20",
@@ -290,6 +317,12 @@ async function voteFive() {
     if (voteamount5 == 0) {
         alert("Please Enter Number of Votes");
         return;
+    } else if (voteamount5 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        return;
     }
     const tx = await Moralis.transfer({
         type: "erc20",
@@ -320,6 +353,12 @@ async function voteFive() {
 async function voteSix() {
     if (voteamount6 == 0) {
         alert("Please Enter Number of Votes");
+        return;
+    } else if (voteamount6 > vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         return;
     }
     const tx = await Moralis.transfer({
