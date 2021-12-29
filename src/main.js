@@ -157,7 +157,7 @@ async function tokenCheck() {
     } else if (vote_token.length == 0) {
         has_token = false;
         document.getElementById("message").style.display = "block";
-        document.getElementById("message").innerText = "Logged in but no DvT in Wallet";
+        document.getElementById("message").innerText = "No DvT in Wallet";
         disableButtons();
     }
 }
