@@ -156,15 +156,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address1").click(function() {
-        $("#copy-wallet-address1").addClass("onclic", 250, validate);
+        $("#copy-wallet-address1").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address1").removeClass("onclic");
-            $("#copy-wallet-address1").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
@@ -175,15 +168,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address2").click(function() {
-        $("#copy-wallet-address2").addClass("onclic", 250, validate);
+        $("#copy-wallet-address2").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address2").removeClass("onclic");
-            $("#copy-wallet-address2").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
@@ -194,15 +180,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address3").click(function() {
-        $("#copy-wallet-address3").addClass("onclic", 250, validate);
+        $("#copy-wallet-address3").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address3").removeClass("onclic");
-            $("#copy-wallet-address3").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
@@ -213,15 +192,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address4").click(function() {
-        $("#copy-wallet-address4").addClass("onclic", 250, validate);
+        $("#copy-wallet-address4").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address4").removeClass("onclic");
-            $("#copy-wallet-address4").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
@@ -232,15 +204,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address5").click(function() {
-        $("#copy-wallet-address5").addClass("onclic", 250, validate);
+        $("#copy-wallet-address5").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address5").removeClass("onclic");
-            $("#copy-wallet-address5").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
@@ -251,15 +216,8 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address6").click(function() {
-        $("#copy-wallet-address6").addClass("onclic", 250, validate);
+        $("#copy-wallet-address6").addClass("validate", 250, callback);
     });
-
-    function validate() {
-        setTimeout(function() {
-            $("#copy-wallet-address6").removeClass("onclic");
-            $("#copy-wallet-address6").addClass("validate", 450, callback);
-        }, 500);
-    }
 
     function callback() {
         setTimeout(function() {
