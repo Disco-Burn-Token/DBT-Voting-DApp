@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <title>DiscoBurn DvT DApp</title>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -23,17 +26,18 @@
 <body class="tmbg" style="background-image: url(https://discoburntoken.com/wp-content/uploads/2021/12/Blockchain-Background.jpg)">
     <!--Side Bar-->
     <nav style="background-color: #bd28708e;" class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">DvT Voting DApp</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="https://discoburntoken.com/"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/discoburn.png" class="navbar-brand-responsive_new" style='width: 100%;'></a>
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>-->
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="https://discoburntoken.com/" id="lg">Home<span class="sr-only">(current)</span></a>
-                </li>
+                    <a class="nav-link" href="https://discoburntoken.com/" id="lg"><span class="sr-only">(current)</span></a>
+                </li>-
             </ul>
+            <!--<div class="Sign-in-Div" style="width: 100%;">-->
             <button id="login_button" class="bubbly-button1" type="submit">
                     <span>Sign In with MetaMask</span>
             </button>
@@ -43,16 +47,16 @@
     <div id="message" class="message_box">
     </div>
     <div class="vote-container">
-        <div class="swapboxwindow1" id="window">
+        <div class="swapboxwindow" id="window">
             <div class="vote-tokentitle">
                 Token 1
             </div>
             <div class="vote-token-icon">
-                <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                <a href="https://rebel-traders.com/" target="_blank"> <img src="https://discoburntoken.com/wp-content/uploads/2021/12/Rebel_Small2.png" alt="Token 1 Icon"></a>
             </div>
             <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1' href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/BSCSsmall.png'></span>
-                <span class='vote-token-sublink-icon2'href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/TGsmall.png'></span>             
+                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/rebel_traders/" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://t.me/rebeltraders" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
             </div>
             <div class="vote-count">
                 <div class="vote-token-cv">
@@ -62,21 +66,29 @@
                     0
                 </div>
             </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input1">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input1" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_1_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
             </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress1">0xecbA00776aA154B3c05486badB0AE2d08B865d04</p>
+                <button onclick="copyToClipboard('#walletaddress1')" id="copy-wallet-address1" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
 
         </div>
-        <div class="swapboxwindow2" id="window">
+        <div class="swapboxwindow" id="window">
             <div class="vote-tokentitle">
                 Token 2
             </div>
             <div class="vote-token-icon">
-                <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                <a href="https://degem.io/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/Degem_small2.png" alt="Token 1 Icon"></a>
             </div>
             <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1' href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/BSCSsmall.png'></span>
-                <span class='vote-token-sublink-icon2'href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/TGsmall.png'></span>             
+                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/degemofficial" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://t.me/degemofficial" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
             </div>
             <div class="vote-count">
                 <div class="vote-token-cv">
@@ -86,21 +98,29 @@
                     0
                 </div>
             </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input2">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input2" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_2_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
             </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress2">0x26F4C1C79dA2db3E298053B1416089783A796c70</p>
+                <button onclick="copyToClipboard('#walletaddress2')" id="copy-wallet-address2" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
 
         </div>
-        <div class="swapboxwindow3" id="window">
+        <div class="swapboxwindow" id="window">
             <div class="vote-tokentitle">
                 Token 3
             </div>
             <div class="vote-token-icon">
-                <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                <a href="https://astrodonkey.com/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/20211226_114054_Small2.png" alt="Token 1 Icon"></a>
             </div>
             <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1' href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/BSCSsmall.png'></span>
-                <span class='vote-token-sublink-icon2'href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/TGsmall.png'></span>             
+                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/ASTRODNKY" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://t.me/astrodonkeycrypto" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
             </div>
             <div class="vote-count">
                 <div class="vote-token-cv">
@@ -110,21 +130,29 @@
                     0
                 </div>
             </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input3">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input3" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_3_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
             </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress3">0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8</p>
+                <button onclick="copyToClipboard('#walletaddress3')" id="copy-wallet-address3" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
 
         </div>
-        <div class="swapboxwindow4" id="window">
+        <div class="swapboxwindow" id="window">
             <div class="vote-tokentitle">
                 Token 4
             </div>
             <div class="vote-token-icon">
-                <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                <a href="https://coinflect.com/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/Coinflect-_Small2.png" alt="Token 1 Icon"></a>
             </div>
             <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1' href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/BSCSsmall.png'></span>
-                <span class='vote-token-sublink-icon2'href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/TGsmall.png'></span>             
+                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/Coinflect" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://t.me/Coinflect" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
             </div>
             <div class="vote-count">
                 <div class="vote-token-cv">
@@ -134,21 +162,29 @@
                     0
                 </div>
             </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input4">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input4" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_4_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
             </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress4">0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3</p>
+                <button onclick="copyToClipboard('#walletaddress4')" id="copy-wallet-address4" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
 
         </div>
-        <div class="swapboxwindow5" id="window">
+        <div class="swapboxwindow" id="window">
             <div class="vote-tokentitle">
                 Token 5
             </div>
             <div class="vote-token-icon">
-                <img src="https://discoburntoken.com/wp-content/uploads/2021/11/BscScan-logo-circle.png" alt="Token 1 Icon">
+                <a href="https://luckytokenbsc.net/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/LuckyToken_Small3.png" alt="Token 1 Icon"></a>
             </div>
             <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1' href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/BSCSsmall.png'></span>
-                <span class='vote-token-sublink-icon2'href=""><img src='https://discoburntoken.com/wp-content/uploads/2021/12/TGsmall.png'></span>             
+                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/lucky_token_bsc" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://t.me/luckytokencasino" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
             </div>
             <div class="vote-count">
                 <div class="vote-token-cv">
@@ -158,9 +194,50 @@
                     0
                 </div>
             </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input5">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input5" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_5_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
             </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress5">0xD14c8ffBe2e04e12919a0cc05532F563944d076b</p>
+                <button onclick="copyToClipboard('#walletaddress5')" id="copy-wallet-address5" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
+
+        </div>
+        <div class="swapboxwindow" id="window">
+            <div class="vote-tokentitle">
+                Token 6
+            </div>
+            <div class="vote-token-icon">
+                <a href="https://spinbsc.com/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2021/12/SpinToken_Small.png" alt="Token 1 Icon"></a>
+            </div>
+            <div class="vote-token-sublink">
+                <span class='vote-token-sublink-icon1'><a href="https://t.me/Spin_bsc" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
+                <span class='vote-token-sublink-icon2'><a href="https://twitter.com/spin_bsc" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
+            </div>
+            <div class="vote-count">
+                <div class="vote-token-cv">
+                    Current Votes:
+                </div>
+                <div id="vote-token-6-count" class="vote-count">
+                    0
+                </div>
+            </div>
+            <div class="vote-count-input-container">
+                <label for="vote-count-input6">Number of Votes:</label>
+                <input class="vote-count-input" type="text" id="vote-count-input6" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
+            </div>
+            <div class="vote-button-container-new">
+                <button id="vote_token_6_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
+            </div>
+            <div class="walletaddress-container">
+                <p class="walletaddress-address" id="walletaddress6">0x213A454a5876649553da8f46AE6758E11Ddf8Cf1</p>
+                <button onclick="copyToClipboard('#walletaddress6')" id="copy-wallet-address6" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
+            </div>
+
         </div>
         <span class="stretch"></span>
     </div>
@@ -173,7 +250,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="src/Button1.js "></script>
-    <script src="src/Button2.js "></script>
 </body>
 
 </html>
