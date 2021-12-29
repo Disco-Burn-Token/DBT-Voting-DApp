@@ -174,7 +174,7 @@ async function voteOne() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -186,6 +186,7 @@ async function voteOne() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -204,7 +205,7 @@ async function voteTwo() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -216,6 +217,7 @@ async function voteTwo() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -234,7 +236,7 @@ async function voteThree() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -246,6 +248,7 @@ async function voteThree() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -264,7 +267,7 @@ async function voteFour() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -276,6 +279,7 @@ async function voteFour() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -294,7 +298,7 @@ async function voteFive() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -306,6 +310,7 @@ async function voteFive() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -324,7 +329,7 @@ async function voteSix() {
         contractAddress: "0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607",
         awaitReceipt: false
     });
-    document.getElementById("message").innerText = "Submitting Vote. . .";
+    document.getElementById("message").innerText = "Submitting Vote...";
     tx.on("error", (error) => {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
@@ -336,6 +341,7 @@ async function voteSix() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         setTimeout(() => { getVoteBalances(); }, 10000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
