@@ -156,72 +156,72 @@ $(function() {
 
 $(function() {
     $("#copy-wallet-address1").click(function() {
-        $("#copy-wallet-address1").addClass("validate", 250, callback);
+        $("#copy-wallet-address1").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address1").removeClass("validate");
+            $("#copy-wallet-address1").removeClass("checkmark");
         }, 1250);
     }
 });
 
 $(function() {
     $("#copy-wallet-address2").click(function() {
-        $("#copy-wallet-address2").addClass("validate", 250, callback);
+        $("#copy-wallet-address2").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address2").removeClass("validate");
+            $("#copy-wallet-address2").removeClass("checkmark");
         }, 1250);
     }
 });
 
 $(function() {
     $("#copy-wallet-address3").click(function() {
-        $("#copy-wallet-address3").addClass("validate", 250, callback);
+        $("#copy-wallet-address3").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address3").removeClass("validate");
+            $("#copy-wallet-address3").removeClass("checkmark");
         }, 1250);
     }
 });
 
 $(function() {
     $("#copy-wallet-address4").click(function() {
-        $("#copy-wallet-address4").addClass("validate", 250, callback);
+        $("#copy-wallet-address4").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address4").removeClass("validate");
+            $("#copy-wallet-address4").removeClass("checkmark");
         }, 1250);
     }
 });
 
 $(function() {
     $("#copy-wallet-address5").click(function() {
-        $("#copy-wallet-address5").addClass("validate", 250, callback);
+        $("#copy-wallet-address5").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address5").removeClass("validate");
+            $("#copy-wallet-address5").removeClass("checkmark");
         }, 1250);
     }
 });
 
 $(function() {
     $("#copy-wallet-address6").click(function() {
-        $("#copy-wallet-address6").addClass("validate", 250, callback);
+        $("#copy-wallet-address6").addClass("checkmark", 250, callback);
     });
 
     function callback() {
         setTimeout(function() {
-            $("#copy-wallet-address6").removeClass("validate");
+            $("#copy-wallet-address6").removeClass("checkmark");
         }, 1250);
     }
 });

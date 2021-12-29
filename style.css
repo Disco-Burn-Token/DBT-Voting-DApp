@@ -40,6 +40,7 @@
                             padding-right: 10px;
                             font-weight: 400;
                             outline: none;
+                            width: 65px;
                         }
                         
                         .walletaddress-address {
@@ -53,6 +54,8 @@
                             border: none;
                             font-family: 'Oswald';
                             letter-spacing: .5px;
+                            padding-left: 5px;
+                            padding-right: 5px;
                         }
                         
                         .walletaddress-container {
@@ -243,6 +246,15 @@
                         }
                         
                         .validate:after {
+                            font-family: 'FontAwesome';
+                            content: "\f00c";
+                        }
+                        
+                        .checkmark {
+                            background: #1ecd97;
+                        }
+                        
+                        .checkmark:after {
                             font-family: 'FontAwesome';
                             content: "\f00c";
                         }
