@@ -421,21 +421,33 @@ async function getVoteBalances() {
 
     if (result1.length == 1) {
         document.getElementById("vote-token-1-count").innerText = (result1[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-1-count").innerText = "0";
     };
     if (result2.length == 1) {
         document.getElementById("vote-token-2-count").innerText = (result2[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-2-count").innerText = "0";
     };
     if (result3.length == 1) {
         document.getElementById("vote-token-3-count").innerText = (result3[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-3-count").innerText = "0";
     };
     if (result4.length == 1) {
         document.getElementById("vote-token-4-count").innerText = (result4[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-4-count").innerText = "0";
     };
     if (result5.length == 1) {
         document.getElementById("vote-token-5-count").innerText = (result5[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-5-count").innerText = "0";
     };
     if (result6.length == 1) {
         document.getElementById("vote-token-6-count").innerText = (result6[0].balance / 1000000000);
+    } else {
+        document.getElementById("vote-token-6-count").innerText = "0";
     };
 };
 
