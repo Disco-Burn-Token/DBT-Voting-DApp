@@ -43,9 +43,12 @@ async function init() {
         logged_in = true;
         enableButtons();
         document.getElementById("login_button").innerText = "Logout";
+        userAddress = currentUser.get('ethAddress');
+        document.getElementById("current-wallet").innerText = "0x..." + userAddress.slice(38);
         tokenCheck();
         setHelperData();
         console.log(global.user_profile.born);
+        document.getElementById("logged_in_info").style.display = "block";
     }
 
     //If user is not logged in
@@ -53,6 +56,7 @@ async function init() {
         logged_in = false;
         disableButtons();
         document.getElementById("login_button").innerText = "Sign in with MetaMask";
+        document.getElementById("logged_in_info").style.display = "none";
     }
 }
 
@@ -93,6 +97,8 @@ async function login() {
         if (!currentUser) {
             document.getElementById("login_button").innerText = "Authenticating...";
             currentUser = await Moralis.authenticate();
+            userAddress = currentUser.get('ethAddress');
+            document.getElementById("current-wallet").innerText = "0x..." + userAddress.slice(38);
             enableButtons();
             tokenCheck();
             setHelperData();
@@ -100,6 +106,7 @@ async function login() {
             logOut();
         }
         document.getElementById("login_button").innerText = "Logout";
+        document.getElementById("logged_in_info").style.display = "block";
         logged_in = true;
     } catch (error) {
         if (error.message == "MetaMask Message Signature: User denied message signature.") {
@@ -113,6 +120,7 @@ async function logOut() {
     document.getElementById("login_button").innerText = "Sign in with Metamask";
     disableButtons();
     document.getElementById("message").style.display = "none";
+    document.getElementById("logged_in_info").style.display = "none";
 
     logged_in = false;
 }
@@ -123,6 +131,8 @@ async function loginWC() {
         if (!currentUser) {
             document.getElementById("login_button_wc").innerText = "Authenticating...";
             currentUser = await Moralis.authenticate({ provider: "walletconnect", chainId: 56 });
+            userAddress = currentUser.get('ethAddress');
+            document.getElementById("current-wallet").innerText = "0x..." + userAddress.slice(38);
             enableButtons();
             tokenCheck();
             setHelperData();
@@ -130,6 +140,7 @@ async function loginWC() {
             logOutWC();
         }
         document.getElementById("login_button_wc").innerText = "Logout";
+        document.getElementById("logged_in_info").style.display = "block";
         logged_in = true;
     } catch (error) {
         if (error.message == "User closed modal") {
@@ -144,6 +155,7 @@ async function logOutWC() {
     document.getElementById("login_button_wc").innerText = "Sign in with WalletConnect";
     disableButtons();
     document.getElementById("message").style.display = "none";
+    document.getElementById("logged_in_info").style.display = "none";
 
     logged_in = false;
 }
@@ -157,7 +169,10 @@ async function tokenCheck() {
         has_token = true;
         document.getElementById("message").style.display = "none";
         vote_token_balance = (vote_token[0].balance / 1000000000);
+        document.getElementById("dvt-balance-current").innerText = vote_token_balance;
     } else if (vote_token.length == 0) {
+        vote_token_balance = 0;
+        document.getElementById("dvt-balance-current").innerText = vote_token_balance;
         has_token = false;
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "No DvT in Wallet";
@@ -198,6 +213,7 @@ async function voteOne() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -237,6 +253,7 @@ async function voteTwo() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -276,6 +293,7 @@ async function voteThree() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -315,6 +333,7 @@ async function voteFour() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -354,6 +373,7 @@ async function voteFive() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -393,6 +413,7 @@ async function voteSix() {
         updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
