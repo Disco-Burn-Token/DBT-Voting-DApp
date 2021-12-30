@@ -23,10 +23,10 @@ var vote_token_balance = 0;
 
 disableButtons();
 
-//Auto - Refreshes wallet balances every 25 seconds
+//Auto - Refreshes wallet balances every 35 seconds
 var intervalId = window.setInterval(function() {
     getVoteBalances();
-}, 25000);
+}, 35000);
 
 //Called when site is loading.
 async function init() {
