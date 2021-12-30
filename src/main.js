@@ -1,7 +1,7 @@
 //import * as helper from './w3Helper.js';
 
-const serverUrl = "https://n94w6dpcju5j.usemoralis.com:2053/server"; //Server url from moralis.io
-const appId = "9fEOftbkmcmrFbKqFwEHfOCfsWBxz3z3efr1vcPM"; // Application id from moralis.io
+const serverUrl = "https://bd6xpqfykho5.usemoralis.com:2053/server"; //Server url from moralis.io
+const appId = "s9hVE8SmoSVGqcdEyp6eQhQmbFBVXxmvoMLPEaAU"; // Application id from moralis.io
 
 //This is being used to hold the Web3API namespace
 let token_obj;
@@ -153,10 +153,10 @@ async function tokenCheck() {
     vote_token = currentBalances.filter(function(v) {
         return v.token_address == 0xa38975Ccc0e8dc7599bfa89BcFdE870eEB50D607;
     });
-    vote_token_balance = (vote_token[0].balance / 1000000000);
     if (vote_token.length != 0) {
         has_token = true;
         document.getElementById("message").style.display = "none";
+        vote_token_balance = (vote_token[0].balance / 1000000000);
     } else if (vote_token.length == 0) {
         has_token = false;
         document.getElementById("message").style.display = "block";
@@ -195,7 +195,9 @@ async function voteOne() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -232,7 +234,9 @@ async function voteTwo() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -269,7 +273,9 @@ async function voteThree() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -306,7 +312,9 @@ async function voteFour() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -343,7 +351,9 @@ async function voteFive() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -380,7 +390,9 @@ async function voteSix() {
         document.getElementById("message").style.display = "block";
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
@@ -499,6 +511,15 @@ function copyToClipboard(element) {
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
+}
+
+function updatingBalancesText() {
+    document.getElementById("vote-token-1-count").innerText = "Updating Balances...";
+    document.getElementById("vote-token-2-count").innerText = "Updating Balances...";
+    document.getElementById("vote-token-3-count").innerText = "Updating Balances...";
+    document.getElementById("vote-token-4-count").innerText = "Updating Balances...";
+    document.getElementById("vote-token-5-count").innerText = "Updating Balances...";
+    document.getElementById("vote-token-6-count").innerText = "Updating Balances...";
 }
 
 //function openModal() {
