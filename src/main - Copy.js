@@ -299,17 +299,12 @@ async function voteThree() {
         setTimeout(() => { getVoteBalances(); }, 5000);
         setTimeout(() => { tokenCheck(); }, 5000);
     });
-    //Paste here for new card
-    
 }
-
-//Start copy here for new card
 async function voteFour() {
-    //Make sure to change the voteamount1 to whatever number you need for the new card
     if (voteamount4 == 0) {
         alert("Please Enter Number of Votes");
         return;
-    } else if (voteamount4 > vote_token_balance) {
+    } else if (voteamount > vote_token_balance) {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerText = "Insufficent DvT in Wallet";
@@ -345,7 +340,7 @@ async function voteFour() {
         setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
-
+//Stop copy here
 //Start copy here for new card
 async function voteFive() {
     //Make sure to change the voteamount1 to whatever number you need for the new card
@@ -388,7 +383,7 @@ async function voteFive() {
         setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
-
+//Stop copy here
 //Start copy here for new card
 async function voteSix() {
     //Make sure to change the voteamount1 to whatever number you need for the new card
@@ -431,6 +426,8 @@ async function voteSix() {
         setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
+//Stop copy here
+
 async function getVoteBalances() {
     //Start copy here for new card
     //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
@@ -448,28 +445,20 @@ async function getVoteBalances() {
     result3 = balances3.filter(function(g) {
         return g.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //Paste copy here 
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
     let balances4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3" });
-    result4 = balances4.filter(function(h) {
-        return h.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
+    result1 = balances4.filter(function(e) {
+        return e.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //End copy here   
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
     let balances5 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b" });
-    result5 = balances5.filter(function(i) {
-        return i.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
+    result1 = balances5.filter(function(f) {
+        return e.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //End copy here    
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
     let balances6 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1" });
-    result6 = balances6.filter(function(j) {
-        return j.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
+    result1 = balances6.filter(function(g) {
+        return e.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //End copy here
+    //Paste copy here 
+
     //Start copy here for new card
     //Change the number on the variables to whatever number you need
     if (result1.length == 1) {
@@ -488,32 +477,23 @@ async function getVoteBalances() {
     } else {
         document.getElementById("vote-token-3-count").innerText = "0";
     };
-    //Paste copy here for new card
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
     if (result4.length == 1) {
         document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
     } else {
         document.getElementById("vote-token-4-count").innerText = "0";
     };
-    //Stop copy here
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
     if (result5.length == 1) {
         document.getElementById("vote-token-5-count").innerText = (result5[0].balance);
     } else {
         document.getElementById("vote-token-5-count").innerText = "0";
-    };
-    //Stop copy here
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
-    if (result6.length == 1) {
+    };if (result6.length == 1) {
         document.getElementById("vote-token-6-count").innerText = (result6[0].balance);
     } else {
         document.getElementById("vote-token-6-count").innerText = "0";
     };
-    //Stop copy here
+    //Paste copy here for new card
 };
+
 //Start copy here for new card
 //Be sure to change the numbers at the end of the variables
 function setVoteCount1() {
@@ -529,6 +509,7 @@ function setVoteCount2() {
     voteamount2 = parseInt(voteCountValue);
     console.log(voteamount2);
 }
+
 function setVoteCount3() {
     var votecount = document.getElementById("vote-count-input3");
     voteCountValue = votecount.value;
