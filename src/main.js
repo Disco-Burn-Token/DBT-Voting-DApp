@@ -16,8 +16,6 @@ var voteamount1 = 0;
 var voteamount2 = 0;
 var voteamount3 = 0;
 var voteamount4 = 0;
-var voteamount5 = 0;
-var voteamount6 = 0;
 
 var vote_token_balance = 0;
 
@@ -26,14 +24,16 @@ disableButtons();
 //Auto - Refreshes wallet balances every 35 seconds
 var intervalId = window.setInterval(function() {
     getVoteBalances();
-}, 35000);
+}, 15000);
+
+var intervalId = window.setInterval(function() {
+    tokenCheck();
+}, 30000);
 
 //Called when site is loading.
 async function init() {
     await Moralis.start({ serverUrl, appId });
     await Moralis.enableWeb3();
-    getVoteBalances();
-
 
     token_obj = await Moralis.Web3API.token;
     currentUser = await Moralis.User.current();
@@ -45,7 +45,6 @@ async function init() {
         document.getElementById("login_button").innerText = "Logout";
         userAddress = currentUser.get('ethAddress');
         document.getElementById("current-wallet").innerText = "0x..." + userAddress.slice(38);
-        tokenCheck();
         setHelperData();
         console.log(global.user_profile.born);
         document.getElementById("logged_in_info").style.display = "block";
@@ -72,14 +71,10 @@ function enableButtons() {
     document.getElementById("vote_token_2_button").disabled = false;
     document.getElementById("vote_token_3_button").disabled = false;
     document.getElementById("vote_token_4_button").disabled = false;
-    document.getElementById("vote_token_5_button").disabled = false;
-    document.getElementById("vote_token_6_button").disabled = false;
     document.getElementById("vote_token_1_button").removeAttribute("title");
     document.getElementById("vote_token_2_button").removeAttribute("title");
     document.getElementById("vote_token_3_button").removeAttribute("title");
     document.getElementById("vote_token_4_button").removeAttribute("title");
-    document.getElementById("vote_token_5_button").removeAttribute("title");
-    document.getElementById("vote_token_6_button").removeAttribute("title");
 }
 
 function disableButtons() {
@@ -87,10 +82,28 @@ function disableButtons() {
     document.getElementById("vote_token_2_button").disabled = true;
     document.getElementById("vote_token_3_button").disabled = true;
     document.getElementById("vote_token_4_button").disabled = true;
-    document.getElementById("vote_token_5_button").disabled = true;
-    document.getElementById("vote_token_6_button").disabled = true;
+
 }
 
+function enableButtonsDown() {
+    document.getElementById("vote_token_1_down_button").disabled = false;
+    document.getElementById("vote_token_2_down_button").disabled = false;
+    document.getElementById("vote_token_3_down_button").disabled = false;
+    document.getElementById("vote_token_4_down_button").disabled = false;
+    document.getElementById("vote_token_1_down_button").removeAttribute("title");
+    document.getElementById("vote_token_2_down_button").removeAttribute("title");
+    document.getElementById("vote_token_3_down_button").removeAttribute("title");
+    document.getElementById("vote_token_4_down_button").removeAttribute("title");
+
+}
+
+function disableButtonsDown() {
+    document.getElementById("vote_token_1_down_button").disabled = true;
+    document.getElementById("vote_token_2_down_button").disabled = true;
+    document.getElementById("vote_token_3_down_button").disabled = true;
+    document.getElementById("vote_token_4_down_button").disabled = true;
+
+}
 async function login() {
     try {
         currentUser = Moralis.User.current();
@@ -162,21 +175,45 @@ async function logOutWC() {
 
 async function tokenCheck() {
     let currentBalances = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc' });
+    let currentBalancesFUD = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc' });
     vote_token = currentBalances.filter(function(v) {
         return v.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
+    });
+    vote_token_down = currentBalancesFUD.filter(function(x) {
+        return x.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
     });
     if (vote_token.length != 0) {
         has_token = true;
         document.getElementById("message").style.display = "none";
         vote_token_balance = (vote_token[0].balance);
         document.getElementById("dvt-balance-current").innerText = vote_token_balance;
+        enableButtons();
     } else if (vote_token.length == 0) {
         vote_token_balance = 0;
         document.getElementById("dvt-balance-current").innerText = vote_token_balance;
         has_token = false;
-        document.getElementById("message").style.display = "block";
-        document.getElementById("message").innerText = "No DvT in Wallet";
         disableButtons();
+        document.getElementById("vote_token_1_button").title = 'Insufficent DVT Balance';
+        document.getElementById("vote_token_2_button").title = 'Insufficent DVT Balance';
+        document.getElementById("vote_token_3_button").title = 'Insufficent DVT Balance';
+        document.getElementById("vote_token_4_button").title = 'Insufficent DVT Balance';
+    }
+    if (vote_token_down.length != 0) {
+        has_down_token = true;
+        document.getElementById("message").style.display = "none";
+        fud_vote_token_balance = (vote_token_down[0].balance * .1);
+        document.getElementById("fud-balance-current").innerText = fud_vote_token_balance
+        enableButtonsDown();
+    } else if (vote_token_down.length == 0) {
+        fud_vote_token_balance = 0;
+        document.getElementById("fud-balance-current").innerText = fud_vote_token_balance;
+        has_down_token = false;
+        disableButtonsDown();
+        document.getElementById("vote_token_1_down_button").title = 'Insufficent DDVT Balance';
+        document.getElementById("vote_token_2_down_button").title = 'Insufficent DDVT Balance';
+        document.getElementById("vote_token_3_down_button").title = 'Insufficent DDVT Balance';
+        document.getElementById("vote_token_4_down_button").title = 'Insufficent DDVT Balance';
+
     }
 }
 //Start copy here for new card
@@ -300,7 +337,7 @@ async function voteThree() {
         setTimeout(() => { tokenCheck(); }, 5000);
     });
     //Paste here for new card
-    
+
 }
 
 //Start copy here for new card
@@ -345,26 +382,64 @@ async function voteFour() {
         setTimeout(() => { tokenCheck(); }, 5000);
     });
 }
-
-//Start copy here for new card
-async function voteFive() {
+async function voteOneDown() {
     //Make sure to change the voteamount1 to whatever number you need for the new card
-    if (voteamount5 == 0) {
+    if (voteamount1 == 0) {
         alert("Please Enter Number of Votes");
         return;
-    } else if (voteamount5 > vote_token_balance) {
+    } else if (voteamount1 > fud_vote_token_balance) {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
-        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        document.getElementById("message").innerText = "Insufficent DDvT in Wallet";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         return;
     }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token(voteamount5, "0"),
+        amount: Moralis.Units.Token(voteamount1, "1"),
         //Change the receiver address to the wallet that will be receiving the token
-        receiver: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b",
-        contractAddress: "0x73Ae8e73cc8374a7e3A983637091624041E5B19D",
+        receiver: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8",
+        contractAddress: "0x85998a72274fc3639d2367c49b426c1Ab3BE86A8",
+        awaitReceipt: false
+    });
+    document.getElementById("message").innerText = "Submitting Vote...";
+    tx.on("error", (error) => {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
+    });
+}
+//Stop copy here
+async function voteTwoDown() {
+    if (voteamount2 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    } else if (voteamount2 > fud_vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DDvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        return;
+    }
+    const tx = await Moralis.transfer({
+        type: "erc20",
+        amount: Moralis.Units.Token(voteamount2, "1"),
+        receiver: "0x26F4C1C79dA2db3E298053B1416089783A796c70",
+        contractAddress: "0x85998a72274fc3639d2367c49b426c1Ab3BE86A8",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote...";
@@ -389,25 +464,66 @@ async function voteFive() {
     });
 }
 
-//Start copy here for new card
-async function voteSix() {
-    //Make sure to change the voteamount1 to whatever number you need for the new card
-    if (voteamount6 == 0) {
+async function voteThreeDown() {
+    if (voteamount3 == 0) {
         alert("Please Enter Number of Votes");
         return;
-    } else if (voteamount6 > vote_token_balance) {
+    } else if (voteamount3 > fud_vote_token_balance) {
         scroll(0, 0);
         document.getElementById("message").style.display = "block";
-        document.getElementById("message").innerText = "Insufficent DvT in Wallet";
+        document.getElementById("message").innerText = "Insufficent DDvT in Wallet";
         setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
         return;
     }
     const tx = await Moralis.transfer({
         type: "erc20",
-        amount: Moralis.Units.Token(voteamount6, "0"),
+        amount: Moralis.Units.Token(voteamount3, "1"),
+        receiver: "0xecbA00776aA154B3c05486badB0AE2d08B865d04",
+        contractAddress: "0x85998a72274fc3639d2367c49b426c1Ab3BE86A8",
+        awaitReceipt: false
+    });
+    tx.on("error", (error) => {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Vote Failed";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+    });
+    tx.on("receipt", (receipt) => {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Vote Successful!";
+        updatingBalancesText();
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        document.getElementById("message").style.color = "white";
+        setTimeout(() => { tokenCheck(); }, 2000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { getVoteBalances(); }, 5000);
+        setTimeout(() => { tokenCheck(); }, 5000);
+    });
+    //Paste here for new card
+
+}
+
+//Start copy here for new card
+async function voteFourDown() {
+    //Make sure to change the voteamount1 to whatever number you need for the new card
+    if (voteamount4 == 0) {
+        alert("Please Enter Number of Votes");
+        return;
+    } else if (voteamount4 > fud_vote_token_balance) {
+        scroll(0, 0);
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "Insufficent DDvT in Wallet";
+        setTimeout(() => { document.getElementById("message").style.display = "none"; }, 10000);
+        return;
+    }
+    const tx = await Moralis.transfer({
+        type: "erc20",
+        amount: Moralis.Units.Token(voteamount4, "1"),
         //Change the receiver address to the wallet that will be receiving the token
-        receiver: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1",
-        contractAddress: "0x73Ae8e73cc8374a7e3A983637091624041E5B19D",
+        receiver: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3",
+        contractAddress: "0x85998a72274fc3639d2367c49b426c1Ab3BE86A8",
         awaitReceipt: false
     });
     document.getElementById("message").innerText = "Submitting Vote...";
@@ -432,52 +548,29 @@ async function voteSix() {
     });
 }
 async function getVoteBalances() {
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
+    //Vote Token Balances
     let balances1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8" });
     result1 = balances1.filter(function(e) {
         return e.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //End copy here
     let balances2 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x26F4C1C79dA2db3E298053B1416089783A796c70" });
     result2 = balances2.filter(function(f) {
         return f.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-
+    await wait(1000);
     let balances3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xecbA00776aA154B3c05486badB0AE2d08B865d04" });
     result3 = balances3.filter(function(g) {
         return g.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //Paste copy here 
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
     let balances4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3" });
     result4 = balances4.filter(function(h) {
         return h.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    //End copy here   
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
-    let balances5 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xD14c8ffBe2e04e12919a0cc05532F563944d076b" });
-    result5 = balances5.filter(function(i) {
-        return i.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
-    });
-    //End copy here    
-    //Start copy here for new card
-    //Make sure you change the address to the wallet you need the balances from and set the variable balances1 to whatever number you need
-    let balances6 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x213A454a5876649553da8f46AE6758E11Ddf8Cf1" });
-    result6 = balances6.filter(function(j) {
-        return j.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
-    });
-    //End copy here
-    //Start copy here for new card
-    //Change the number on the variables to whatever number you need
     if (result1.length == 1) {
         document.getElementById("vote-token-1-count").innerText = (result1[0].balance);
     } else {
         document.getElementById("vote-token-1-count").innerText = "0";
     };
-    //Stop copy here
     if (result2.length == 1) {
         document.getElementById("vote-token-2-count").innerText = (result2[0].balance);
     } else {
@@ -488,72 +581,102 @@ async function getVoteBalances() {
     } else {
         document.getElementById("vote-token-3-count").innerText = "0";
     };
-    //Paste copy here for new card
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
     if (result4.length == 1) {
         document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
     } else {
         document.getElementById("vote-token-4-count").innerText = "0";
     };
-    //Stop copy here
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
-    if (result5.length == 1) {
-        document.getElementById("vote-token-5-count").innerText = (result5[0].balance);
+    await wait(1000);
+    //Downvote Token Balances
+    let balancesDown1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8" });
+    resultDown1 = balancesDown1.filter(function(j) {
+        return j.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
+    });
+    let balancesDown2 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0x26F4C1C79dA2db3E298053B1416089783A796c70" });
+    resultDown2 = balancesDown2.filter(function(k) {
+        return k.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
+    });
+
+    let balancesDown3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xecbA00776aA154B3c05486badB0AE2d08B865d04" });
+    resultDown3 = balancesDown3.filter(function(l) {
+        return l.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
+    });
+    let balancesDown4 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3" });
+    resultDown4 = balancesDown4.filter(function(z) {
+        return z.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
+    });
+    if (resultDown1.length == 1) {
+        document.getElementById("downvote-token-1-count").innerText = (resultDown1[0].balance * .1);
     } else {
-        document.getElementById("vote-token-5-count").innerText = "0";
+        document.getElementById("downvote-token-1-count").innerText = "0";
     };
-    //Stop copy here
-        //Start copy here for new card
-    //Change the number on the variables to whatever number you need
-    if (result6.length == 1) {
-        document.getElementById("vote-token-6-count").innerText = (result6[0].balance);
+    if (resultDown2.length == 1) {
+        document.getElementById("downvote-token-2-count").innerText = (resultDown2[0].balance * .1);
     } else {
-        document.getElementById("vote-token-6-count").innerText = "0";
+        document.getElementById("downvote-token-2-count").innerText = "0";
     };
-    //Stop copy here
+    if (resultDown3.length == 1) {
+        document.getElementById("downvote-token-3-count").innerText = (resultDown3[0].balance * .1);
+    } else {
+        document.getElementById("downvote-token-3-count").innerText = "0";
+    };
+    if (resultDown4.length == 1) {
+        document.getElementById("downvote-token-4-count").innerText = (resultDown4[0].balance * .1);
+    } else {
+        document.getElementById("downvote-token-4-count").innerText = "0";
+    };
+    //Final Vote Count
+    if (resultDown1.length == 1 && result1.length == 1) {
+        document.getElementById("total-vote-count1").innerText = (result1[0].balance - (resultDown1[0].balance * .1));
+    } else {
+        document.getElementById("total-vote-count1").innerText = "0";
+    };
+    if (resultDown2.length == 1 && result2.length == 1) {
+        document.getElementById("total-vote-count2").innerText = (result2[0].balance - (resultDown2[0].balance * .1));
+    } else {
+        document.getElementById("total-vote-count2").innerText = "0";
+    };
+    if (resultDown3.length == 1 && result3.length == 1) {
+        document.getElementById("total-vote-count3").innerText = (result3[0].balance - (resultDown3[0].balance * .1));
+    } else {
+        document.getElementById("total-vote-count3").innerText = "0";
+    };
+    if (resultDown4.length == 1 && result4.length == 1) {
+        document.getElementById("total-vote-count4").innerText = (result4[0].balance - (resultDown4[0].balance * .1));
+    } else {
+        document.getElementById("total-vote-count4").innerText = "0";
+    };
+
 };
-//Start copy here for new card
-//Be sure to change the numbers at the end of the variables
+
 function setVoteCount1() {
     var votecount = document.getElementById("vote-count-input1");
     voteCountValue = votecount.value;
     voteamount1 = parseInt(voteCountValue);
     console.log(voteamount1);
 }
-//Stop copy here
+
 function setVoteCount2() {
     var votecount = document.getElementById("vote-count-input2");
     voteCountValue = votecount.value;
     voteamount2 = parseInt(voteCountValue);
     console.log(voteamount2);
 }
+
 function setVoteCount3() {
     var votecount = document.getElementById("vote-count-input3");
     voteCountValue = votecount.value;
     voteamount3 = parseInt(voteCountValue);
     console.log(voteamount3);
 }
-//Paste copy here for new card
+
 function setVoteCount4() {
     var votecount = document.getElementById("vote-count-input4");
     voteCountValue = votecount.value;
     voteamount4 = parseInt(voteCountValue);
     console.log(voteamount4);
 }
-function setVoteCount5() {
-    var votecount = document.getElementById("vote-count-input5");
-    voteCountValue = votecount.value;
-    voteamount5 = parseInt(voteCountValue);
-    console.log(voteamount5);
-}
-function setVoteCount6() {
-    var votecount = document.getElementById("vote-count-input6");
-    voteCountValue = votecount.value;
-    voteamount6 = parseInt(voteCountValue);
-    console.log(voteamount6);
-}
+
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -562,13 +685,16 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function updatingBalancesText() {
     document.getElementById("vote-token-1-count").innerText = "Updating Balances...";
     document.getElementById("vote-token-2-count").innerText = "Updating Balances...";
     document.getElementById("vote-token-3-count").innerText = "Updating Balances...";
     document.getElementById("vote-token-4-count").innerText = "Updating Balances...";
-    document.getElementById("vote-token-5-count").innerText = "Updating Balances...";
-    document.getElementById("vote-token-6-count").innerText = "Updating Balances...";
+    getVoteBalances;
 }
 
 //function openModal() {
@@ -587,6 +713,7 @@ function updatingBalancesText() {
 
 init();
 getVoteBalances();
+tokenCheck();
 
 //document.getElementById("modal_close").onclick = closeModal;
 
@@ -598,11 +725,11 @@ document.getElementById("vote_token_1_button").onclick = voteOne;
 document.getElementById("vote_token_2_button").onclick = voteTwo;
 document.getElementById("vote_token_3_button").onclick = voteThree;
 document.getElementById("vote_token_4_button").onclick = voteFour;
-document.getElementById("vote_token_5_button").onclick = voteFive;
-document.getElementById("vote_token_6_button").onclick = voteSix;
+document.getElementById("vote_token_1_down_button").onclick = voteOneDown;
+document.getElementById("vote_token_2_down_button").onclick = voteTwoDown;
+document.getElementById("vote_token_3_down_button").onclick = voteThreeDown;
+document.getElementById("vote_token_4_down_button").onclick = voteFourDown;
 document.getElementById("vote-count-input1").oninput = setVoteCount1;
 document.getElementById("vote-count-input2").oninput = setVoteCount2;
 document.getElementById("vote-count-input3").oninput = setVoteCount3;
 document.getElementById("vote-count-input4").oninput = setVoteCount4;
-document.getElementById("vote-count-input5").oninput = setVoteCount5;
-document.getElementById("vote-count-input6").oninput = setVoteCount6;

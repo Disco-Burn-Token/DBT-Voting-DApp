@@ -50,8 +50,12 @@
             <p id="current-wallet">Not Logged in</p>
         </div>
         <div class="dvt-balance">
-            <label for="dvt-balance-current">DvT Balance:</label>
+            <label for="dvt-balance-current">VOTE Balance:</label>
             <p id="dvt-balance-current"></p>
+        </div>
+        <div class="dvt-balance">
+            <label for="fud-balance-current">FUD Balance:</label>
+            <p id="fud-balance-current"></p>
         </div>
     </div>
     <div id="message" class="message_box">
@@ -75,13 +79,20 @@
                 <div id="vote-token-1-count" class="vote-count">
                     Fetching Vote Count...
                 </div>
+                <div id="downvote-token-1-count">
+                    hello
+                </div>
+                <div id="total-vote-count1">
+                    hello
+                </div>
             </div>
             <div class="vote-count-input-container">
-                <label for="vote-count-input1">DvT to Send:</label>
+                <label for="vote-count-input1">Votes to Send:</label>
                 <input class="vote-count-input" type="number" size="1" id="vote-count-input1" name="Vote Count Input" placeholder="#" autocomplete="off" style="outline: none;">
             </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_1_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
+                <button id="vote_token_1_down_button" title="Please Sign-in to Enable Voting" class="vote-button-new-down" style="outline: none;"></button>
             </div>
             <div class="walletaddress-container">
                 <p class="walletaddress-address" id="walletaddress1">0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8</p>
@@ -107,6 +118,12 @@
                 <div id="vote-token-2-count" class="vote-count">
                     Fetching Vote Count...
                 </div>
+                <div id="downvote-token-2-count">
+                    hello
+                </div>
+                <div id="total-vote-count2">
+                    hello
+                </div>
             </div>
             <div class="vote-count-input-container">
                 <label for="vote-count-input2">DvT to Send:</label>
@@ -114,6 +131,7 @@
             </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_2_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
+                <button id="vote_token_2_down_button" title="Please Sign-in to Enable Voting" class="vote-button-new-down" style="outline: none;"></button>
             </div>
             <div class="walletaddress-container">
                 <p class="walletaddress-address" id="walletaddress2">0x26F4C1C79dA2db3E298053B1416089783A796c70</p>
@@ -139,6 +157,12 @@
                 <div id="vote-token-3-count" class="vote-count">
                     Fetching Vote Count...
                 </div>
+                <div id="downvote-token-3-count">
+                    hello
+                </div>
+                <div id="total-vote-count3">
+                    hello
+                </div>
             </div>
             <div class="vote-count-input-container">
                 <label for="vote-count-input3">DvT to Send:</label>
@@ -146,6 +170,7 @@
             </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_3_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
+                <button id="vote_token_3_down_button" title="Please Sign-in to Enable Voting" class="vote-button-new-down" style="outline: none;"></button>
             </div>
             <div class="walletaddress-container">
                 <p class="walletaddress-address" id="walletaddress3">0xecbA00776aA154B3c05486badB0AE2d08B865d04</p>
@@ -170,6 +195,12 @@
                 <div id="vote-token-4-count" class="vote-count">
                     Fetching Vote Count...
                 </div>
+                <div id="downvote-token-4-count">
+                    hello
+                </div>
+                <div id="total-vote-count4">
+                    hello
+                </div>
             </div>
             <div class="vote-count-input-container">
                 <label for="vote-count-input4">DvT to Send:</label>
@@ -177,74 +208,14 @@
             </div>
             <div class="vote-button-container-new">
                 <button id="vote_token_4_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
+                <button id="vote_token_4_down_button" title="Please Sign-in to Enable Voting" class="vote-button-new-down" style="outline: none;"></button>
             </div>
             <div class="walletaddress-container">
                 <p class="walletaddress-address" id="walletaddress4">0xb6dAEc6f33C26fC6Da7b42cd935475dF5a04f1c3</p>
                 <button onclick="copyToClipboard('#walletaddress4')" id="copy-wallet-address4" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
             </div>
         </div>
-        <div class="swapboxwindow" id="window">
-            <div class="vote-tokentitle">
-                Token 5
-            </div>
-            <div class="vote-token-icon">
-                <a href="https://www.champiooon.com" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2022/03/Champiooon-1.png" alt="Token 1 Icon"></a>
-            </div>
-            <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/Champiooon2" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
-                <span class='vote-token-sublink-icon2'><a href="https://t.me/champiooontoken" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
-            </div>
-            <div class="vote-count">
-                <div class="vote-token-cv">
-                    Current Votes:
-                </div>
-                <div id="vote-token-5-count" class="vote-count">
-                    Fetching Vote Count...
-                </div>
-            </div>
-            <div class="vote-count-input-container">
-                <label for="vote-count-input5">DvT to Send:</label>
-                <input class="vote-count-input" type="number" id="vote-count-input5" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
-            </div>
-            <div class="vote-button-container-new">
-                <button id="vote_token_5_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
-            </div>
-            <div class="walletaddress-container">
-                <p class="walletaddress-address" id="walletaddress5">0xD14c8ffBe2e04e12919a0cc05532F563944d076b</p>
-                <button onclick="copyToClipboard('#walletaddress5')" id="copy-wallet-address5" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
-            </div>
-        </div>
-        <div class="swapboxwindow" id="window">
-            <div class="vote-tokentitle">
-                Token 6
-            </div>
-            <div class="vote-token-icon">
-                <a href="https://deviouslicks.io/" target="_blank"><img src="https://discoburntoken.com/wp-content/uploads/2022/03/deviousLogo256-e1647311175858.png" alt="Token 1 Icon"></a>
-            </div>
-            <div class="vote-token-sublink">
-                <span class='vote-token-sublink-icon1'><a href="https://twitter.com/DeviousLicks" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Twitter_small.png'></a></span>
-                <span class='vote-token-sublink-icon2'><a href="https://t.me/deviouslicksnft" target="_blank"><img src='https://discoburntoken.com/wp-content/uploads/2021/12/Telegram_small3.png'></a></span>
-            </div>
-            <div class="vote-count">
-                <div class="vote-token-cv">
-                    Current Votes:
-                </div>
-                <div id="vote-token-6-count" class="vote-count">
-                    Fetching Vote Count...
-                </div>
-            </div>
-            <div class="vote-count-input-container">
-                <label for="vote-count-input6">DvT to Send:</label>
-                <input class="vote-count-input" type="number" id="vote-count-input6" name="Vote Count Input" placeholder="#" size="1" autocomplete="off" style="outline: none;">
-            </div>
-            <div class="vote-button-container-new">
-                <button id="vote_token_6_button" title="Please Sign-in to Enable Voting" class="vote-button-new" style="outline: none;"></button>
-            </div>
-            <div class="walletaddress-container">
-                <p class="walletaddress-address" id="walletaddress6">0x213A454a5876649553da8f46AE6758E11Ddf8Cf1</p>
-                <button onclick="copyToClipboard('#walletaddress6')" id="copy-wallet-address6" class="copy-address" title="Copy Wallet Address">Copy Wallet Address</button>
-            </div>
-        </div>
+
         <span class="stretch"></span>
     </div>
 
