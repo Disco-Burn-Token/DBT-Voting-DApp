@@ -566,26 +566,7 @@ async function getVoteBalances() {
     result4 = balances4.filter(function(h) {
         return h.token_address == 0x73Ae8e73cc8374a7e3A983637091624041E5B19D;
     });
-    if (result1.length == 1) {
-        document.getElementById("vote-token-1-count").innerText = (result1[0].balance);
-    } else {
-        document.getElementById("vote-token-1-count").innerText = "0";
-    };
-    if (result2.length == 1) {
-        document.getElementById("vote-token-2-count").innerText = (result2[0].balance);
-    } else {
-        document.getElementById("vote-token-2-count").innerText = "0";
-    };
-    if (result3.length == 1) {
-        document.getElementById("vote-token-3-count").innerText = (result3[0].balance);
-    } else {
-        document.getElementById("vote-token-3-count").innerText = "0";
-    };
-    if (result4.length == 1) {
-        document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
-    } else {
-        document.getElementById("vote-token-4-count").innerText = "0";
-    };
+
     await wait(1000);
     //Downvote Token Balances
     let balancesDown1 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xF0858a63193f3958D42AC6d2fD21B84CEC5291C8" });
@@ -596,7 +577,7 @@ async function getVoteBalances() {
     resultDown2 = balancesDown2.filter(function(k) {
         return k.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
     });
-
+    await wait(1000);
     let balancesDown3 = await Moralis.Web3API.account.getTokenBalances({ chain: 'bsc', address: "0xecbA00776aA154B3c05486badB0AE2d08B865d04" });
     resultDown3 = balancesDown3.filter(function(l) {
         return l.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
@@ -605,46 +586,83 @@ async function getVoteBalances() {
     resultDown4 = balancesDown4.filter(function(z) {
         return z.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
     });
+    /////
+    if (result1.length == 1) {
+        document.getElementById("vote-token-1-count").innerText = (result1[0].balance);
+        result1Total = result1[0].balance;
+    } else {
+        document.getElementById("vote-token-1-count").innerText = "0";
+        result1Total = 0;
+    };
+    if (result2.length == 1) {
+        document.getElementById("vote-token-2-count").innerText = (result2[0].balance);
+        result2Total = result2[0].balance;
+    } else {
+        document.getElementById("vote-token-2-count").innerText = "0";
+        result2Total = 0;
+    };
+    if (result3.length == 1) {
+        document.getElementById("vote-token-3-count").innerText = (result3[0].balance);
+        result3Total = result3[0].balance;
+    } else {
+        document.getElementById("vote-token-3-count").innerText = "0";
+        result3Total = 0;
+    };
+    if (result4.length == 1) {
+        document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
+    } else {
+        document.getElementById("vote-token-4-count").innerText = "0";
+        result4Total = 0;
+    };
+    ///
     if (resultDown1.length == 1) {
         document.getElementById("downvote-token-1-count").innerText = (resultDown1[0].balance * .1);
+        resultDown1Total = (resultDown1[0].balance * .1);
     } else {
         document.getElementById("downvote-token-1-count").innerText = "0";
+        resultDown1Total = 0;
     };
     if (resultDown2.length == 1) {
         document.getElementById("downvote-token-2-count").innerText = (resultDown2[0].balance * .1);
+        resultDown2Total = (resultDown2[0].balance * .1);
     } else {
         document.getElementById("downvote-token-2-count").innerText = "0";
+        resultDown2Total = 0;
     };
     if (resultDown3.length == 1) {
         document.getElementById("downvote-token-3-count").innerText = (resultDown3[0].balance * .1);
+        resultDown3Total = (resultDown3[0].balance * .1);
     } else {
         document.getElementById("downvote-token-3-count").innerText = "0";
+        resultDown3Total = 0;
     };
     if (resultDown4.length == 1) {
         document.getElementById("downvote-token-4-count").innerText = (resultDown4[0].balance * .1);
+        resultDown4Total = (resultDown4[0].balance * .1);
     } else {
         document.getElementById("downvote-token-4-count").innerText = "0";
+        resultDown4Total = 0;
     };
     //Final Vote Count
     if (resultDown1.length == 1 && result1.length == 1) {
         document.getElementById("total-vote-count1").innerText = (result1[0].balance - (resultDown1[0].balance * .1));
     } else {
-        document.getElementById("total-vote-count1").innerText = "0";
+        document.getElementById("total-vote-count1").innerText = (result1Total - resultDown1Total);
     };
     if (resultDown2.length == 1 && result2.length == 1) {
         document.getElementById("total-vote-count2").innerText = (result2[0].balance - (resultDown2[0].balance * .1));
     } else {
-        document.getElementById("total-vote-count2").innerText = "0";
+        document.getElementById("total-vote-count2").innerText = (result2Total - resultDown2Total);
     };
     if (resultDown3.length == 1 && result3.length == 1) {
         document.getElementById("total-vote-count3").innerText = (result3[0].balance - (resultDown3[0].balance * .1));
     } else {
-        document.getElementById("total-vote-count3").innerText = "0";
+        document.getElementById("total-vote-count3").innerText = (result3Total - resultDown3Total);
     };
     if (resultDown4.length == 1 && result4.length == 1) {
         document.getElementById("total-vote-count4").innerText = (result4[0].balance - (resultDown4[0].balance * .1));
     } else {
-        document.getElementById("total-vote-count4").innerText = "0";
+        document.getElementById("total-vote-count4").innerText = (result4Total - resultDown4Total);
     };
 
 };

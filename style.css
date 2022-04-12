@@ -24,6 +24,11 @@
                     display: none;
                 }
                 
+                .vote-count-container {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
                 .wallet-info {
                     background-color: rgba(0, 0, 0, 0.603);
                     width: fit-content;
