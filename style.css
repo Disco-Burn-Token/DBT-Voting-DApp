@@ -232,8 +232,8 @@
                     text-align: center;
                     width: 130px;
                     border-radius: 30px;
-                    background: linear-gradient(rgb(0, 175, 137) 10%, rgb(12, 255, 134) 90%);
-                    border: 3.5px solid #000000;
+                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/like.png') no-repeat left center;
+                    background-color: green;
                     color: #020202;
                     letter-spacing: 1px;
                     text-shadow: 0;
@@ -275,7 +275,8 @@
                     text-align: center;
                     width: 130px;
                     border-radius: 30px;
-                    background: linear-gradient(rgb(0, 175, 137) 10%, rgb(12, 255, 134) 90%);
+                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/thumb-down.png') no-repeat right center;
+                    background-color: rgb(175, 2, 2);
                     border: 3.5px solid #000000;
                     color: #020202;
                     letter-spacing: 1px;

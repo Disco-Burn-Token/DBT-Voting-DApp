@@ -20,6 +20,7 @@ var voteamount4 = 0;
 var vote_token_balance = 0;
 
 disableButtons();
+disableButtonsDown();
 
 //Auto - Refreshes wallet balances every 35 seconds
 var intervalId = window.setInterval(function() {
@@ -54,6 +55,7 @@ async function init() {
     else {
         logged_in = false;
         disableButtons();
+        disableButtonsDown();
         document.getElementById("login_button").innerText = "Sign in with MetaMask";
         document.getElementById("logged_in_info").style.display = "none";
     }
@@ -132,6 +134,7 @@ async function logOut() {
     currentUser = await Moralis.User.logOut();
     document.getElementById("login_button").innerText = "Sign in with Metamask";
     disableButtons();
+    disableButtonsDown();
     document.getElementById("message").style.display = "none";
     document.getElementById("logged_in_info").style.display = "none";
 
@@ -167,6 +170,7 @@ async function logOutWC() {
     currentUser = await Moralis.User.logOut();
     document.getElementById("login_button_wc").innerText = "Sign in with WalletConnect";
     disableButtons();
+    disableButtonsDown();
     document.getElementById("message").style.display = "none";
     document.getElementById("logged_in_info").style.display = "none";
 
@@ -586,7 +590,7 @@ async function getVoteBalances() {
     resultDown4 = balancesDown4.filter(function(z) {
         return z.token_address == 0x85998a72274fc3639d2367c49b426c1Ab3BE86A8;
     });
-    /////
+    ///
     if (result1.length == 1) {
         document.getElementById("vote-token-1-count").innerText = (result1[0].balance);
         result1Total = result1[0].balance;
