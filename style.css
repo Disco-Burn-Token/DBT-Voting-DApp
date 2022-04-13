@@ -24,6 +24,30 @@
                     display: none;
                 }
                 
+                .vote-count-container {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: -40px;
+                    white-space: nowrap;
+                    font-family: Oswald;
+                    font-size: 35px;
+                    font-weight: 300;
+                    text-align: center;
+                }
+                
+                .vote-count-container-vc {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 0 auto;
+                    margin-bottom: 0px;
+                    white-space: nowrap;
+                    font-family: Oswald;
+                    font-size: 18px;
+                    font-weight: 300;
+                    text-align: center;
+                }
+                
                 .wallet-info {
                     background-color: rgba(0, 0, 0, 0.603);
                     width: fit-content;
@@ -51,7 +75,7 @@
                 }
                 
                 .vote-container {
-                    margin-top: 5%;
+                    margin-top: 10%;
                     width: 95%;
                     text-align: justify;
                     display: inline-flex;
@@ -185,10 +209,10 @@
                 
                 .vote-token-cv {
                     margin-top: 0 auto;
-                    margin-bottom: 20px;
+                    margin-bottom: 35px;
                     white-space: nowrap;
                     font-family: Oswald;
-                    font-size: 35px;
+                    font-size: 30px;
                     font-weight: 300;
                     text-align: center;
                 }
@@ -221,14 +245,13 @@
                     margin: 0 auto;
                     margin-top: 25px;
                     margin-bottom: 20px;
-                    ;
                     position: center;
                     height: 40px;
                     text-align: center;
                     width: 130px;
                     border-radius: 30px;
-                    background: linear-gradient(rgb(0, 175, 137) 10%, rgb(12, 255, 134) 90%);
-                    border: 3.5px solid #000000;
+                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/like.png') no-repeat left center;
+                    background-color: green;
                     color: #020202;
                     letter-spacing: 1px;
                     text-shadow: 0;
@@ -256,6 +279,49 @@
                 }
                 
                 .vote-button-new:after {
+                    content: "VOTE";
+                }
+                
+                .vote-button-new-down {
+                    outline: none;
+                    margin: 0 auto;
+                    margin-top: 25px;
+                    margin-bottom: 20px;
+                    position: center;
+                    height: 40px;
+                    text-align: center;
+                    width: 130px;
+                    border-radius: 30px;
+                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/thumb-down.png') no-repeat right center;
+                    background-color: rgb(175, 2, 2);
+                    border: 3.5px solid #000000;
+                    color: #020202;
+                    letter-spacing: 1px;
+                    text-shadow: 0;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px, rgba(0, 0, 0, 0.3) 0px 7px 20px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+                }
+                
+                .vote-button-new-down:disabled {
+                    background: rgb(250, 0, 0);
+                    opacity: 40%;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                }
+                
+                .vote-button-new-down:enabled:hover {
+                    color: rgb(255, 0, 0);
+                    background-color: #080afd;
+                    background-image: radial-gradient(#00000000 20%, #ffffff 60%);
+                }
+                
+                .vote-button-new-down:active {
+                    letter-spacing: 2px;
+                }
+                
+                .vote-button-new-down:after {
                     content: "VOTE";
                 }
                 
