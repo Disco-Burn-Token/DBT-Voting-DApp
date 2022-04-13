@@ -225,3 +225,134 @@ $(function() {
         }, 1250);
     }
 });
+
+//JS for VOTE button ONE functionality
+$(function() {
+    $("#vote_token_1_down_button").click(function() {
+        $("#vote_token_1_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_1_down_button").removeClass("onclic");
+            $("#vote_token_1_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_1_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+//JS for VOTE button TWO functionality
+$(function() {
+    $("#vote_token_2_down_button").click(function() {
+        $("#vote_token_2_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_2_down_button").removeClass("onclic");
+            $("#vote_token_2_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_2_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+//JS for VOTE button THREE functionality
+$(function() {
+    $("#vote_token_3_down_button").click(function() {
+        $("#vote_token_3_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_3_down_button").removeClass("onclic");
+            $("#vote_token_3_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_3_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+//JS for VOTE button FOUR functionality
+$(function() {
+    $("#vote_token_4_down_button").click(function() {
+        $("#vote_token_4_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_4_down_button").removeClass("onclic");
+            $("#vote_token_4_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_4_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+//JS for VOTE button FIVE functionality
+$(function() {
+    $("#vote_token_5_down_button").click(function() {
+        $("#vote_token_5_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_5_down_button").removeClass("onclic");
+            $("#vote_token_5_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_5_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+$(function() {
+    $("#vote_token_6_down_button").click(function() {
+        $("#vote_token_6_down_button").addClass("onclic", 250, validate);
+    });
+
+    function validate() {
+        setTimeout(function() {
+            $("#vote_token_6_down_button").removeClass("onclic");
+            $("#vote_token_6_down_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
+
+    function callback() {
+        setTimeout(function() {
+            $("#vote_token_6_down_button").removeClass("validate");
+        }, 1250);
+    }
+});
+
+$(function() {
+    $("#copy-wallet-address1").click(function() {
+        $("#copy-wallet-address1").addClass("checkmark", 250, callback);
+    });
+
+    function callback() {
+        setTimeout(function() {
+            $("#copy-wallet-address1").removeClass("checkmark");
+        }, 1250);
+    }
+});
