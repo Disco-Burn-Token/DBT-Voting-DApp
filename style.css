@@ -726,6 +726,9 @@
                     .message_box {
                         margin-top: 32%;
                     }
+                    #window {
+                        padding: 10px;
+                    }
                 }
                 
                 @media only screen and (min-width: 2500px) {
