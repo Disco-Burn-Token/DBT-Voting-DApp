@@ -1,735 +1,738 @@
-                #window {
-                    margin-top: 50px;
-                    background-image: linear-gradient(rgba(46, 2, 128, 0.781) 10%, rgb(231, 71, 159) 75%, #FFA236);
-                    color: #ffffff;
-                    padding: 50px;
-                    border-radius: 60px;
-                    box-shadow: rgba(0, 0, 0, 0.815) 0px 2px 10px, rgba(0, 0, 0, 0.404) 0px 4px 13px -6px, rgba(0, 0, 0, 0.349) 0px -8px 0px inset;
-                    margin-right: auto;
-                    margin-left: auto;
-                    height: fit-content;
-                }
-                
-                #h4 {
-                    color: #3dca11;
-                }
-                
-                .logged_in_info {
-                    float: left;
-                    color: white;
-                    width: fit-content;
-                    padding-top: 30px;
-                    margin-bottom: -15%;
-                    margin-left: 10%;
-                    display: none;
-                }
-                
-                .vote-count-container {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 20px;
-                    margin-bottom: -40px;
-                    white-space: nowrap;
-                    font-family: Oswald;
-                    font-size: 35px;
-                    font-weight: 300;
-                    text-align: center;
-                }
-                
-                .vote-count-container-vc {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 0 auto;
-                    margin-bottom: 0px;
-                    white-space: nowrap;
-                    font-family: Oswald;
-                    font-size: 18px;
-                    font-weight: 300;
-                    text-align: center;
-                }
-                
-                .wallet-info {
-                    background-color: rgba(0, 0, 0, 0.603);
-                    width: fit-content;
-                    border-radius: 30px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    padding-top: 5px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-content: center;
-                    font-size: 18px;
-                }
-                
-                .dvt-balance {
-                    background-color: rgba(0, 0, 0, 0.603);
-                    width: fit-content;
-                    margin-top: 5px;
-                    border-radius: 30px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    padding-top: 5px;
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 18px;
-                }
-                
-                .vote-container {
-                    margin-top: 10%;
-                    width: 95%;
-                    text-align: justify;
-                    display: inline-flex;
-                    flex-wrap: wrap;
-                    padding-bottom: 50px;
-                }
-                
-                .vote-count-input-container {
-                    text-align: center;
-                    padding-top: 10%;
-                    margin-bottom: -4%;
-                }
-                
-                .vote-count-input {
-                    border-radius: 30px;
-                    text-align: center;
-                    border: revert;
-                    background-color: #ffffffc2;
-                    color: black;
-                    font-family: 'Oswald';
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    font-weight: 400;
-                    outline: none;
-                    width: 65px;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                }
-                
-                .walletaddress-address {
-                    overflow-wrap: anywhere;
-                    display: flex;
-                }
-                
-                .copy-address {
-                    border-radius: 30px;
-                    outline: none;
-                    border: none;
-                    font-family: 'Oswald';
-                    letter-spacing: .5px;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                }
-                
-                .walletaddress-container {
-                    text-align: center;
-                    padding-top: 44px;
-                }
-                
-                label {
-                    display: inline-block;
-                    font-family: 'Oswald';
-                    font-size: 20px;
-                    padding-right: 5px;
-                    font-weight: 300;
-                    letter-spacing: .5px;
-                }
-                
-                .swapboxwindow {
-                    padding: 0%;
-                    Margin: 0%;
-                    width: 450px;
-                    height: fit-content;
-                    display: inline-block;
-                    *display: inline;
-                    zoom: 1
-                }
-                
-                .message_box {
-                    margin-top: 5%;
-                    background-color: rgba(0, 0, 0, 0.712);
-                    border-radius: 90px;
-                    font-size: 45px;
-                    inline-size: min-content;
-                    align-content: center;
-                    color: #d4d4d5;
-                    font-family: Oswald;
-                    font-weight: 400;
-                    padding-top: 30px;
-                    padding-bottom: 30px;
-                    display: none;
-                    width: fit-content;
-                    margin-left: auto;
-                    margin-right: auto;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    height: fit-content;
-                    line-height: 50px;
-                    margin-bottom: -5%;
-                }
-                
-                .stretch {
-                    width: 100%;
-                    display: inline-block;
-                    font-size: 0;
-                    line-height: 0
-                }
-                
-                .vote-tokentitle {
-                    font-family: Oswald;
-                    font-size: 50px;
-                    font-weight: bolder;
-                    text-align: center;
-                    display: none;
-                }
-                
-                .vote-token-icon {
-                    margin-top: 0px;
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-                
-                .vote-token-sublink {
-                    margin-left: 23%;
-                    margin-right: 23%;
-                    padding-bottom: 40px;
-                }
-                
-                .vote-token-sublink-icon1 {
-                    white-space: nowrap;
-                    display: inline;
-                    position: inherit;
-                }
-                
-                .vote-token-sublink-icon2 {
-                    white-space: nowrap;
-                    float: right;
-                    display: inline;
-                    position: inherit;
-                }
-                
-                .vote-token-cv {
-                    margin-top: 0 auto;
-                    margin-bottom: 35px;
-                    white-space: nowrap;
-                    font-family: Oswald;
-                    font-size: 30px;
-                    font-weight: 300;
-                    text-align: center;
-                }
-                
-                .vote-count {
-                    margin: 0 auto;
-                    position: center;
-                    font-family: Oswald;
-                    font-size: 35px;
-                    font-weight: 300;
-                    text-align: center;
-                    line-height: 40px;
-                }
-                /* Custom Vote Button */
-                
-                * {
-                    font-family: 'Roboto', sans-serif;
-                }
-                
-                .vote-button-container-new {
-                    margin: 0 auto;
-                    width: 100%;
-                    width: fit-content;
-                    height: 40px;
-                    text-align: center;
-                }
-                
-                .vote-button-new {
-                    outline: none;
-                    margin: 0 auto;
-                    margin-top: 25px;
-                    margin-bottom: 20px;
-                    position: center;
-                    height: 40px;
-                    text-align: center;
-                    width: 130px;
-                    border-radius: 30px;
-                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/like.png') no-repeat left center;
-                    background-color: green;
-                    color: #020202;
-                    letter-spacing: 1px;
-                    text-shadow: 0;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: all .2s ease;
-                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px, rgba(0, 0, 0, 0.3) 0px 7px 20px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
-                }
-                
-                .vote-button-new:disabled {
-                    background: rgb(250, 0, 0);
-                    opacity: 40%;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-                }
-                
-                .vote-button-new:enabled:hover {
-                    color: rgb(0, 0, 0);
-                    background-color: #1ecd97;
-                    background-image: radial-gradient(#00000000 20%, #ffffff 60%);
-                }
-                
-                .vote-button-new:active {
-                    letter-spacing: 2px;
-                }
-                
-                .vote-button-new:after {
-                    content: "VOTE";
-                }
-                
-                .vote-button-new-down {
-                    outline: none;
-                    margin: 0 auto;
-                    margin-top: 25px;
-                    margin-bottom: 20px;
-                    position: center;
-                    height: 40px;
-                    text-align: center;
-                    width: 130px;
-                    border-radius: 30px;
-                    background: url('https://discoburntoken.com/wp-content/uploads/2022/04/thumb-down.png') no-repeat right center;
-                    background-color: rgb(175, 2, 2);
-                    border: 3.5px solid #000000;
-                    color: #020202;
-                    letter-spacing: 1px;
-                    text-shadow: 0;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: all .2s ease;
-                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px, rgba(0, 0, 0, 0.3) 0px 7px 20px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
-                }
-                
-                .vote-button-new-down:disabled {
-                    background: rgb(250, 0, 0);
-                    opacity: 40%;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-                }
-                
-                .vote-button-new-down:enabled:hover {
-                    color: rgb(255, 0, 0);
-                    background-color: #080afd;
-                    background-image: radial-gradient(#00000000 20%, #ffffff 60%);
-                }
-                
-                .vote-button-new-down:active {
-                    letter-spacing: 2px;
-                }
-                
-                .vote-button-new-down:after {
-                    content: "VOTE";
-                }
-                
-                .onclic {
-                    width: 40px;
-                    border-color: rgb(0, 0, 0);
-                    background: rgba(0, 0, 0, 0);
-                    border-width: 5px;
-                    font-size: 0;
-                    border-left-color: rgb(1, 212, 142);
-                    animation: rotating 2s 0.5s linear infinite;
-                }
-                
-                .onclic:after {
-                    transition: all .75s;
-                }
-                
-                .onclic:hover {
-                    background-color: #1ecd9600;
-                    background: rgba(255, 255, 255, 0);
-                }
-                
-                .validate {
-                    font-size: 13px;
-                    color: rgb(0, 0, 0);
-                    background: #1ecd97;
-                }
-                
-                .validate:after {
-                    font-family: 'FontAwesome';
-                    content: "\f00c";
-                }
-                
-                .checkmark {
-                    background: #1ecd97;
-                }
-                
-                .checkmark:after {
-                    font-family: 'FontAwesome';
-                    content: "\f00c";
-                }
-                
-                @keyframes rotating {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-                /*Nav-Bar CSS*/
-                
-                .navbar-expand-lg {
-                    min-height: fit-content;
-                    max-height: fit-content;
-                    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-                }
-                
-                .navbar-navbar-expand-lg-navbar-dark {
-                    text-align: center;
-                    padding: 0%;
-                }
-                
-                .nav-new {
-                    text-align: center;
-                    width: 100%;
-                    height: fit-content;
-                }
-                
-                .navbar-brand {
-                    float: left;
-                    max-width: 100%;
-                    height: fit-content;
-                    margin-left: 20px;
-                }
-                
-                .navbar-brand-responsive_new {
-                    text-align: center;
-                    max-width: fit-content;
-                    height: 100%;
-                    height: auto;
-                }
-                
-                .Sign-in-Div {
-                    text-align: right;
-                }
-                
-                .collapse:not(.show) {
-                    display: block;
-                }
-                /*Nav-Bar BUTTON 1 MM Sign-in */
-                
-                body {
-                    font-size: 16px;
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    text-align: center;
-                    background-color: #000000;
-                }
-                
-                .bubbly-button1 {
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    display: inline-block;
-                    font-size: 1em;
-                    padding: 1em 2em;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    margin-right: 20px;
-                    -webkit-appearance: none;
-                    background: url('https://discoburntoken.com/wp-content/uploads/2021/12/metamask.png') no-repeat right center;
-                    padding-right: 70px;
-                    appearance: none;
-                    background-color: #6B0DD4;
-                    color: #fff;
-                    border-radius: 10px;
-                    border: none;
-                    cursor: pointer;
-                    position: relative;
-                    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-                }
-                
-                .bubbly-button1:hover {
-                    background-color: #f59f53;
-                }
-                
-                .bubbly-button1:focus {
-                    outline: 0;
-                }
-                
-                .bubbly-button1:before,
-                .bubbly-button1:after {
-                    position: absolute;
-                    content: '';
-                    display: block;
-                    width: 140%;
-                    height: 100%;
-                    left: -20%;
-                    z-index: -1000;
-                    transition: all ease-in-out 0.5s;
-                    background-repeat: no-repeat;
-                }
-                
-                .bubbly-button1:before {
-                    display: none;
-                    top: -100%;
-                    background-image: radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 20%, #F5841F 20%, transparent 30%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F5841F 15%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%);
-                    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-                }
-                
-                .bubbly-button1:after {
-                    display: none;
-                    bottom: -100%;
-                    background-image: radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F5841F 15%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%);
-                    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
-                }
-                
-                .bubbly-button1:active {
-                    transform: scale(0.9);
-                    background-color: #F5841F;
-                    box-shadow: 0 2px 25px #f5831f73;
-                }
-                
-                .bubbly-button1.animate:before {
-                    display: block;
-                    animation: topBubbles ease-in-out .75s forwards;
-                }
-                
-                .bubbly-button1.animate:after {
-                    display: block;
-                    animation: bottomBubbles ease-in-out .75s forwards;
-                }
-                
-                @keyframes topBubbles {
-                    0% {
-                        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-                    }
-                    50% {
-                        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-                    }
-                    100% {
-                        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-                        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-                    }
-                }
-                
-                @keyframes bottomBubbles {
-                    0% {
-                        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
-                    }
-                    50% {
-                        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
-                    }
-                    100% {
-                        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-                        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-                    }
-                }
-                /*Nav-Bar BUTTON 1 MM Sign-in */
-                
-                body {
-                    font-size: 16px;
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    text-align: center;
-                    background-color: #000000;
-                }
-                
-                .bubbly-button2 {
-                    font-family: 'Helvetica', 'Arial', sans-serif;
-                    display: inline-block;
-                    font-size: 1em;
-                    padding: 1em 2em;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    margin-right: 20px;
-                    -webkit-appearance: none;
-                    background: url('https://discoburntoken.com/wp-content/uploads/2021/12/walletconnect.png') no-repeat right center;
-                    padding-right: 70px;
-                    appearance: none;
-                    background-color: #6B0DD4;
-                    color: #fff;
-                    border-radius: 10px;
-                    border: none;
-                    cursor: pointer;
-                    position: relative;
-                    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-                }
-                
-                .bubbly-button2:hover {
-                    background-color: #39c8db;
-                }
-                
-                .bubbly-button2:focus {
-                    outline: 0;
-                }
-                
-                .bubbly-button2:before,
-                .bubbly-button2:after {
-                    position: absolute;
-                    content: '';
-                    display: block;
-                    width: 140%;
-                    height: 100%;
-                    left: -20%;
-                    z-index: -1000;
-                    transition: all ease-in-out 0.5s;
-                    background-repeat: no-repeat;
-                }
-                
-                .bubbly-button2:before {
-                    display: none;
-                    top: -100%;
-                    background-image: radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 20%, #3B99FC 20%, transparent 30%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3B99FC 15%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%);
-                    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-                }
-                
-                .bubbly-button2:after {
-                    display: none;
-                    bottom: -100%;
-                    background-image: radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3B99FC 15%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%);
-                    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
-                }
-                
-                .bubbly-button2:active {
-                    transform: scale(0.9);
-                    background-color: #3B99FC;
-                    box-shadow: 0 2px 25px #3b98fc77;
-                }
-                
-                .bubbly-button2.animate:before {
-                    display: block;
-                    animation: topBubbles ease-in-out .75s forwards;
-                }
-                
-                .bubbly-button2.animate:after {
-                    display: block;
-                    animation: bottomBubbles ease-in-out .75s forwards;
-                }
-                
-                @keyframes topBubbles {
-                    0% {
-                        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-                    }
-                    50% {
-                        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-                    }
-                    100% {
-                        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-                        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-                    }
-                }
-                
-                @keyframes bottomBubbles {
-                    0% {
-                        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
-                    }
-                    50% {
-                        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
-                    }
-                    100% {
-                        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-                        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-                    }
-                }
-                /*Custom Scroll Bar/////////////////////////
+                            #window {
+                                margin-top: 50px;
+                                background-image: linear-gradient(rgba(46, 2, 128, 0.781) 10%, rgb(231, 71, 159) 75%, #FFA236);
+                                color: #ffffff;
+                                padding: 50px;
+                                border-radius: 60px;
+                                box-shadow: rgba(0, 0, 0, 0.815) 0px 2px 10px, rgba(0, 0, 0, 0.404) 0px 4px 13px -6px, rgba(0, 0, 0, 0.349) 0px -8px 0px inset;
+                                margin-right: auto;
+                                margin-left: auto;
+                                height: fit-content;
+                            }
+                            
+                            #h4 {
+                                color: #3dca11;
+                            }
+                            
+                            .logged_in_info {
+                                float: left;
+                                color: white;
+                                width: fit-content;
+                                padding-top: 30px;
+                                margin-bottom: -15%;
+                                margin-left: 10%;
+                                display: none;
+                            }
+                            
+                            .vote-count-container {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-top: 20px;
+                                margin-bottom: -40px;
+                                white-space: nowrap;
+                                font-family: Oswald;
+                                font-size: 35px;
+                                font-weight: 300;
+                                text-align: center;
+                            }
+                            
+                            .vote-count-container-vc {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-top: 0 auto;
+                                margin-bottom: 0px;
+                                white-space: nowrap;
+                                font-family: Oswald;
+                                font-size: 18px;
+                                font-weight: 300;
+                                text-align: center;
+                            }
+                            
+                            .wallet-info {
+                                background-color: rgba(0, 0, 0, 0.603);
+                                width: fit-content;
+                                border-radius: 30px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                padding-top: 5px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-content: center;
+                                font-size: 18px;
+                            }
+                            
+                            .dvt-balance {
+                                background-color: rgba(0, 0, 0, 0.603);
+                                width: fit-content;
+                                margin-top: 5px;
+                                border-radius: 30px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                padding-top: 5px;
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 18px;
+                            }
+                            
+                            .vote-container {
+                                margin-top: 10%;
+                                width: 95%;
+                                text-align: justify;
+                                display: inline-flex;
+                                flex-wrap: wrap;
+                                padding-bottom: 50px;
+                            }
+                            
+                            .vote-count-input-container {
+                                text-align: center;
+                                padding-top: 10%;
+                                margin-bottom: -4%;
+                            }
+                            
+                            .vote-count-input {
+                                border-radius: 30px;
+                                text-align: center;
+                                border: revert;
+                                background-color: #ffffffc2;
+                                color: black;
+                                font-family: 'Oswald';
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                font-weight: 400;
+                                outline: none;
+                                width: 65px;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                            }
+                            
+                            .walletaddress-address {
+                                overflow-wrap: anywhere;
+                                display: flex;
+                            }
+                            
+                            .copy-address {
+                                border-radius: 30px;
+                                outline: none;
+                                border: none;
+                                font-family: 'Oswald';
+                                letter-spacing: .5px;
+                                padding-left: 5px;
+                                padding-right: 5px;
+                            }
+                            
+                            .walletaddress-container {
+                                text-align: center;
+                                padding-top: 44px;
+                            }
+                            
+                            label {
+                                display: inline-block;
+                                font-family: 'Oswald';
+                                font-size: 20px;
+                                padding-right: 5px;
+                                font-weight: 300;
+                                letter-spacing: .5px;
+                            }
+                            
+                            .swapboxwindow {
+                                padding: 0%;
+                                Margin: 0%;
+                                width: 450px;
+                                height: fit-content;
+                                display: inline-block;
+                                *display: inline;
+                                zoom: 1
+                            }
+                            
+                            .message_box {
+                                margin-top: 5%;
+                                background-color: rgba(0, 0, 0, 0.712);
+                                border-radius: 90px;
+                                font-size: 45px;
+                                inline-size: min-content;
+                                align-content: center;
+                                color: #d4d4d5;
+                                font-family: Oswald;
+                                font-weight: 400;
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                                display: none;
+                                width: fit-content;
+                                margin-left: auto;
+                                margin-right: auto;
+                                padding-left: 15px;
+                                padding-right: 15px;
+                                height: fit-content;
+                                line-height: 50px;
+                                margin-bottom: -5%;
+                            }
+                            
+                            .stretch {
+                                width: 100%;
+                                display: inline-block;
+                                font-size: 0;
+                                line-height: 0
+                            }
+                            
+                            .vote-tokentitle {
+                                font-family: Oswald;
+                                font-size: 50px;
+                                font-weight: bolder;
+                                text-align: center;
+                                display: none;
+                            }
+                            
+                            .vote-token-icon {
+                                margin-top: 0px;
+                                margin-bottom: 20px;
+                                text-align: center;
+                            }
+                            
+                            .vote-token-sublink {
+                                margin-left: 23%;
+                                margin-right: 23%;
+                                padding-bottom: 40px;
+                            }
+                            
+                            .vote-token-sublink-icon1 {
+                                white-space: nowrap;
+                                display: inline;
+                                position: inherit;
+                            }
+                            
+                            .vote-token-sublink-icon2 {
+                                white-space: nowrap;
+                                float: right;
+                                display: inline;
+                                position: inherit;
+                            }
+                            
+                            .vote-token-cv {
+                                margin-top: 0 auto;
+                                margin-bottom: 35px;
+                                white-space: nowrap;
+                                font-family: Oswald;
+                                font-size: 30px;
+                                font-weight: 300;
+                                text-align: center;
+                            }
+                            
+                            .vote-count {
+                                margin: 0 auto;
+                                position: center;
+                                font-family: Oswald;
+                                font-size: 35px;
+                                font-weight: 300;
+                                text-align: center;
+                                line-height: 40px;
+                            }
+                            /* Custom Vote Button */
+                            
+                            * {
+                                font-family: 'Roboto', sans-serif;
+                            }
+                            
+                            .vote-button-container-new {
+                                margin: 0 auto;
+                                width: 100%;
+                                width: fit-content;
+                                height: 40px;
+                                text-align: center;
+                            }
+                            
+                            .vote-button-new {
+                                outline: none;
+                                margin: 0 auto;
+                                margin-top: 25px;
+                                margin-bottom: 20px;
+                                position: center;
+                                height: 40px;
+                                text-align: center;
+                                width: 130px;
+                                border-radius: 30px;
+                                background: url('https://discoburntoken.com/wp-content/uploads/2022/04/like.png') no-repeat left center;
+                                background-color: green;
+                                color: #020202;
+                                letter-spacing: 1px;
+                                text-shadow: 0;
+                                font-size: 16px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: all .2s ease;
+                                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px, rgba(0, 0, 0, 0.3) 0px 7px 20px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+                            }
+                            
+                            .vote-button-new:disabled {
+                                background: rgb(250, 0, 0);
+                                opacity: 40%;
+                                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                            }
+                            
+                            .vote-button-new:enabled:hover {
+                                color: rgb(0, 0, 0);
+                                background-color: #1ecd97;
+                                background-image: radial-gradient(#00000000 20%, #ffffff 60%);
+                            }
+                            
+                            .vote-button-new:active {
+                                letter-spacing: 2px;
+                            }
+                            
+                            .vote-button-new:after {
+                                content: "VOTE";
+                            }
+                            
+                            .vote-button-new-down {
+                                outline: none;
+                                margin: 0 auto;
+                                margin-top: 25px;
+                                margin-bottom: 20px;
+                                position: center;
+                                height: 40px;
+                                text-align: center;
+                                width: 130px;
+                                border-radius: 30px;
+                                background: url('https://discoburntoken.com/wp-content/uploads/2022/04/thumb-down.png') no-repeat right center;
+                                background-color: rgb(175, 2, 2);
+                                border: 3.5px solid #000000;
+                                color: #020202;
+                                letter-spacing: 1px;
+                                text-shadow: 0;
+                                font-size: 16px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: all .2s ease;
+                                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px, rgba(0, 0, 0, 0.3) 0px 7px 20px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+                            }
+                            
+                            .vote-button-new-down:disabled {
+                                background: rgb(250, 0, 0);
+                                opacity: 40%;
+                                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                            }
+                            
+                            .vote-button-new-down:enabled:hover {
+                                color: rgb(255, 0, 0);
+                                background-color: #080afd;
+                                background-image: radial-gradient(#00000000 20%, #ffffff 60%);
+                            }
+                            
+                            .vote-button-new-down:active {
+                                letter-spacing: 2px;
+                            }
+                            
+                            .vote-button-new-down:after {
+                                content: "VOTE";
+                            }
+                            
+                            .onclic {
+                                width: 40px;
+                                border-color: rgb(0, 0, 0);
+                                background: rgba(0, 0, 0, 0);
+                                border-width: 5px;
+                                font-size: 0;
+                                border-left-color: rgb(1, 212, 142);
+                                animation: rotating 2s 0.5s linear infinite;
+                            }
+                            
+                            .onclic:after {
+                                transition: all .75s;
+                            }
+                            
+                            .onclic:hover {
+                                background-color: #1ecd9600;
+                                background: rgba(255, 255, 255, 0);
+                            }
+                            
+                            .validate {
+                                font-size: 13px;
+                                color: rgb(0, 0, 0);
+                                background: #1ecd97;
+                            }
+                            
+                            .validate:after {
+                                font-family: 'FontAwesome';
+                                content: "\f00c";
+                            }
+                            
+                            .checkmark {
+                                background: #1ecd97;
+                            }
+                            
+                            .checkmark:after {
+                                font-family: 'FontAwesome';
+                                content: "\f00c";
+                            }
+                            
+                            @keyframes rotating {
+                                from {
+                                    transform: rotate(0deg);
+                                }
+                                to {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                            /*Nav-Bar CSS*/
+                            
+                            .navbar-expand-lg {
+                                min-height: fit-content;
+                                max-height: fit-content;
+                                box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                            }
+                            
+                            .navbar-navbar-expand-lg-navbar-dark {
+                                text-align: center;
+                                padding: 0%;
+                            }
+                            
+                            .nav-new {
+                                text-align: center;
+                                width: 100%;
+                                height: fit-content;
+                            }
+                            
+                            .navbar-brand {
+                                float: left;
+                                max-width: 100%;
+                                height: fit-content;
+                                margin-left: 20px;
+                            }
+                            
+                            .navbar-brand-responsive_new {
+                                text-align: center;
+                                max-width: fit-content;
+                                height: 100%;
+                                height: auto;
+                            }
+                            
+                            .Sign-in-Div {
+                                text-align: right;
+                            }
+                            
+                            .collapse:not(.show) {
+                                display: block;
+                            }
+                            /*Nav-Bar BUTTON 1 MM Sign-in */
+                            
+                            body {
+                                font-size: 16px;
+                                font-family: 'Helvetica', 'Arial', sans-serif;
+                                text-align: center;
+                                background-color: #000000;
+                            }
+                            
+                            .bubbly-button1 {
+                                font-family: 'Helvetica', 'Arial', sans-serif;
+                                display: inline-block;
+                                font-size: 1em;
+                                padding: 1em 2em;
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                margin-right: 20px;
+                                -webkit-appearance: none;
+                                background: url('https://discoburntoken.com/wp-content/uploads/2021/12/metamask.png') no-repeat right center;
+                                padding-right: 70px;
+                                appearance: none;
+                                background-color: #6B0DD4;
+                                color: #fff;
+                                border-radius: 10px;
+                                border: none;
+                                cursor: pointer;
+                                position: relative;
+                                transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+                                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                            }
+                            
+                            .bubbly-button1:hover {
+                                background-color: #f59f53;
+                            }
+                            
+                            .bubbly-button1:focus {
+                                outline: 0;
+                            }
+                            
+                            .bubbly-button1:before,
+                            .bubbly-button1:after {
+                                position: absolute;
+                                content: '';
+                                display: block;
+                                width: 140%;
+                                height: 100%;
+                                left: -20%;
+                                z-index: -1000;
+                                transition: all ease-in-out 0.5s;
+                                background-repeat: no-repeat;
+                            }
+                            
+                            .bubbly-button1:before {
+                                display: none;
+                                top: -100%;
+                                background-image: radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 20%, #F5841F 20%, transparent 30%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F5841F 15%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%);
+                                background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+                            }
+                            
+                            .bubbly-button1:after {
+                                display: none;
+                                bottom: -100%;
+                                background-image: radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F5841F 15%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%), radial-gradient(circle, #F5841F 20%, transparent 20%);
+                                background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+                            }
+                            
+                            .bubbly-button1:active {
+                                transform: scale(0.9);
+                                background-color: #F5841F;
+                                box-shadow: 0 2px 25px #f5831f73;
+                            }
+                            
+                            .bubbly-button1.animate:before {
+                                display: block;
+                                animation: topBubbles ease-in-out .75s forwards;
+                            }
+                            
+                            .bubbly-button1.animate:after {
+                                display: block;
+                                animation: bottomBubbles ease-in-out .75s forwards;
+                            }
+                            
+                            @keyframes topBubbles {
+                                0% {
+                                    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+                                }
+                                50% {
+                                    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+                                }
+                                100% {
+                                    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+                                    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                                }
+                            }
+                            
+                            @keyframes bottomBubbles {
+                                0% {
+                                    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+                                }
+                                50% {
+                                    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+                                }
+                                100% {
+                                    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+                                    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                                }
+                            }
+                            /*Nav-Bar BUTTON 1 MM Sign-in */
+                            
+                            body {
+                                font-size: 16px;
+                                font-family: 'Helvetica', 'Arial', sans-serif;
+                                text-align: center;
+                                background-color: #000000;
+                            }
+                            
+                            .bubbly-button2 {
+                                font-family: 'Helvetica', 'Arial', sans-serif;
+                                display: inline-block;
+                                font-size: 1em;
+                                padding: 1em 2em;
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                margin-right: 20px;
+                                -webkit-appearance: none;
+                                background: url('https://discoburntoken.com/wp-content/uploads/2021/12/walletconnect.png') no-repeat right center;
+                                padding-right: 70px;
+                                appearance: none;
+                                background-color: #6B0DD4;
+                                color: #fff;
+                                border-radius: 10px;
+                                border: none;
+                                cursor: pointer;
+                                position: relative;
+                                transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+                                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                            }
+                            
+                            .bubbly-button2:hover {
+                                background-color: #39c8db;
+                            }
+                            
+                            .bubbly-button2:focus {
+                                outline: 0;
+                            }
+                            
+                            .bubbly-button2:before,
+                            .bubbly-button2:after {
+                                position: absolute;
+                                content: '';
+                                display: block;
+                                width: 140%;
+                                height: 100%;
+                                left: -20%;
+                                z-index: -1000;
+                                transition: all ease-in-out 0.5s;
+                                background-repeat: no-repeat;
+                            }
+                            
+                            .bubbly-button2:before {
+                                display: none;
+                                top: -100%;
+                                background-image: radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 20%, #3B99FC 20%, transparent 30%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3B99FC 15%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%);
+                                background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+                            }
+                            
+                            .bubbly-button2:after {
+                                display: none;
+                                bottom: -100%;
+                                background-image: radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3B99FC 15%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%), radial-gradient(circle, #3B99FC 20%, transparent 20%);
+                                background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+                            }
+                            
+                            .bubbly-button2:active {
+                                transform: scale(0.9);
+                                background-color: #3B99FC;
+                                box-shadow: 0 2px 25px #3b98fc77;
+                            }
+                            
+                            .bubbly-button2.animate:before {
+                                display: block;
+                                animation: topBubbles ease-in-out .75s forwards;
+                            }
+                            
+                            .bubbly-button2.animate:after {
+                                display: block;
+                                animation: bottomBubbles ease-in-out .75s forwards;
+                            }
+                            
+                            @keyframes topBubbles {
+                                0% {
+                                    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+                                }
+                                50% {
+                                    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+                                }
+                                100% {
+                                    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+                                    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                                }
+                            }
+                            
+                            @keyframes bottomBubbles {
+                                0% {
+                                    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+                                }
+                                50% {
+                                    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+                                }
+                                100% {
+                                    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+                                    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                                }
+                            }
+                            /*Custom Scroll Bar/////////////////////////
 /* width */
-                
-                 ::-webkit-scrollbar {
-                    width: 10px;
-                }
-                /* Track */
-                
-                 ::-webkit-scrollbar-track {
-                    background: #f1f1f1;
-                    border-radius: 20px;
-                }
-                /* Handle */
-                
-                 ::-webkit-scrollbar-thumb {
-                    background: #888;
-                    border-radius: 20px;
-                }
-                /* Handle on hover */
-                
-                 ::-webkit-scrollbar-thumb:hover {
-                    background: #555;
-                }
-                
-                .center {
-                    margin: auto;
-                    width: 75%;
-                    border: 3px solid green;
-                    padding: 10px;
-                }
-                
-                .modal {
-                    top: 100px;
-                }
-                
-                .btn-outline-primary {
-                    color: #e7a005;
-                    border-color: #e7a005;
-                }
-                
-                .btn-outline-primary:hover {
-                    color: rgba(255, 255, 255, 0);
-                    background-color: #e7a005;
-                    border-color: #e7a005;
-                }
-                
-                .searchbutton {
-                    border-radius: 10px;
-                }
-                
-                .form-control {
-                    border-radius: 20px;
-                    font-weight: 600;
-                }
-                
-                .btn-primary:disabled {
-                    color: rgb(255, 255, 255);
-                    background-color: #e7a005;
-                    border-color: #000000;
-                    border-radius: 10px;
-                }
-                
-                .btn-primary {
-                    color: rgb(0, 0, 0);
-                    background-color: #e7a005;
-                    border-color: #000000;
-                    border-radius: 10px;
-                    font-weight: 700;
-                }
-                
-                .btn-primary:hover {
-                    color: #000;
-                    background-color: #e7a005;
-                    border-color: #000000;
-                    font-weight: 700;
-                }
-                
-                .tmbg {
-                    background-position: top;
-                    background-size: cover;
-                }
-                
-                .navbar-dark .navbar-nav .nav-link {
-                    color: #ffffff
-                }
-                
-                .navbar {
-                    justify-content: center;
-                }
-                
-                @media only screen and (max-width: 770px) {
-                    .bubbly-button1 {
-                        display: none;
-                    }
-                    .bubbly-button2 {
-                        margin-right: 0px;
-                    }
-                    .message_box {
-                        margin-top: 32%;
-                    }
-                }
-                
-                @media only screen and (min-width: 2500px) {
-                    .vote-container {
-                        width: 70%;
-                    }
-                }
+                            
+                             ::-webkit-scrollbar {
+                                width: 10px;
+                            }
+                            /* Track */
+                            
+                             ::-webkit-scrollbar-track {
+                                background: #f1f1f1;
+                                border-radius: 20px;
+                            }
+                            /* Handle */
+                            
+                             ::-webkit-scrollbar-thumb {
+                                background: #888;
+                                border-radius: 20px;
+                            }
+                            /* Handle on hover */
+                            
+                             ::-webkit-scrollbar-thumb:hover {
+                                background: #555;
+                            }
+                            
+                            .center {
+                                margin: auto;
+                                width: 75%;
+                                border: 3px solid green;
+                                padding: 10px;
+                            }
+                            
+                            .modal {
+                                top: 100px;
+                            }
+                            
+                            .btn-outline-primary {
+                                color: #e7a005;
+                                border-color: #e7a005;
+                            }
+                            
+                            .btn-outline-primary:hover {
+                                color: rgba(255, 255, 255, 0);
+                                background-color: #e7a005;
+                                border-color: #e7a005;
+                            }
+                            
+                            .searchbutton {
+                                border-radius: 10px;
+                            }
+                            
+                            .form-control {
+                                border-radius: 20px;
+                                font-weight: 600;
+                            }
+                            
+                            .btn-primary:disabled {
+                                color: rgb(255, 255, 255);
+                                background-color: #e7a005;
+                                border-color: #000000;
+                                border-radius: 10px;
+                            }
+                            
+                            .btn-primary {
+                                color: rgb(0, 0, 0);
+                                background-color: #e7a005;
+                                border-color: #000000;
+                                border-radius: 10px;
+                                font-weight: 700;
+                            }
+                            
+                            .btn-primary:hover {
+                                color: #000;
+                                background-color: #e7a005;
+                                border-color: #000000;
+                                font-weight: 700;
+                            }
+                            
+                            .tmbg {
+                                background-position: top;
+                                background-size: cover;
+                            }
+                            
+                            .navbar-dark .navbar-nav .nav-link {
+                                color: #ffffff
+                            }
+                            
+                            .navbar {
+                                justify-content: center;
+                            }
+                            
+                            @media only screen and (max-width: 770px) {
+                                .bubbly-button1 {
+                                    display: none;
+                                }
+                                .bubbly-button2 {
+                                    margin-right: 0px;
+                                }
+                                .message_box {
+                                    margin-top: 32%;
+                                }
+                                #window {
+                                    padding: 10px;
+                                }
+                            }
+                            
+                            @media only screen and (min-width: 2500px) {
+                                .vote-container {
+                                    width: 70%;
+                                }
+                            }
