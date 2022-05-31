@@ -717,12 +717,14 @@ async function getVoteBalances() {
     };
     if (result4.length == 1) {
         document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
+        result4Total = result4[0].balance;
     } else {
         document.getElementById("vote-token-4-count").innerText = "0";
         result4Total = 0;
     };
     if (result5.length == 1) {
         document.getElementById("vote-token-5-count").innerText = (result5[0].balance);
+        result5Total = result5[0].balance;
     } else {
         document.getElementById("vote-token-5-count").innerText = "0";
         result5Total = 0;
