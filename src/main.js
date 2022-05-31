@@ -614,6 +614,7 @@ async function getVoteBalances() {
     };
     if (result4.length == 1) {
         document.getElementById("vote-token-4-count").innerText = (result4[0].balance);
+        result4Total = result4[0].balance;
     } else {
         document.getElementById("vote-token-4-count").innerText = "0";
         result4Total = 0;
